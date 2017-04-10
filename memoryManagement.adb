@@ -1,12 +1,19 @@
 package body memoryManagement is
 
-   procedure reallocate (StackSpace : array; EqualAllocate : float; K : integer) is
-      AvailSpace : integer := StackSpace'Last - StackSpace'First;
-      TotalInc, Sigma : integer := 0;
-      j := StackSpace'Last;
-      N : constant integer := StackSpace'Last;
+   procedure makeStack (inFile : String; outFile : String) is
+      input, output : File_Type;
+   begin
+      Open(inFile, input_file, input);
+      
+   end makeStack;
+
+   procedure reallocate (stack : in out StackSpace; top : in out growthSpace; EqualAllocate : float; K : integer) is
+      AvailSpace : integer := stack'Last - stack'First;
+      TotalInc : integer := 0;
+      j : integer := stack'Last;
+      N : constant integer := stack'Last;
       Insufficient_Memory : exception;
-      GrowthAllocate, Alpha, Beta, Tau : float;
+      GrowthAllocate, Alpha, Beta, Tau, Sigma : float;
    begin
       while j > 0 loop
          AvailSpace := AvailSpace - (Top(j) - Base(j));
@@ -18,16 +25,17 @@ package body memoryManagement is
          end if;
          j := j-1;
       end loop;
-      if AvailSpace < (MinSpace - 1) then
+      --if AvailSpace < (MinSpace - 1) then
+      if AvailSpace < 10 then  
          raise Insufficient_Memory;
          --terminate
       end if;
-      GrowthAllocate := 1 - EqualAllocate;
-      Alpha := EqualAllocate * AvailSpace / N;
-      Beta := GrowthAllocate * AvailSpace / TotalInc;
+      GrowthAllocate := 1.0 - EqualAllocate;
+      Alpha := EqualAllocate * Float(AvailSpace) / Float(N);
+      Beta := GrowthAllocate * Float(AvailSpace) / Float(TotalInc);
       NewBase(1) := Base(1);
       for j in 2..N loop
-         Tau := Sigma + Alpha + Growth(j-1) * Beta;
+         Tau := float(Sigma) + Alpha + Float(Growth(j-1) * Beta);
          NewBase(j) := NewBase(j-1) + (Top(j-1) - Base(j-1)) + float'Floor(Tau) - float'Floor(Sigma);
          Sigma := Tau;
       end loop;
@@ -35,33 +43,35 @@ package body memoryManagement is
       --moveStack
       Top(K) := Top(K) + 1;
       --insert prev item
-      for j in 1..arr'Length loop
+      for j in 1..stack'Length loop
          OldTop(j) := Top(j);
       end loop;
+   end reallocate;   
       
-   procedure moveStack (arr : array(); ) is
-      Delta : integer;
+   procedure moveStack (stack : in out StackSpace; top : in out growthSpace) is
+      change : integer;
+      N : integer := stack'Last;
    begin
       for j in 2..N loop
          if NewBase(j) < Base(j) then
-            Delta := Base(j) - NewBase(j);
+            change := Base(j) - NewBase(j);
             for l in Base(j)+1..Top(j) loop
-               StackSpace(l-Delta) := StackSpace(l);
+               stack(l-change) := stack(l);
             end loop;
             Base(j) := NewBase(j);
-            Top(j) := Top(j) - Delta;
+            Top(j) := Top(j) - change;
          end if;
       end loop;
       
       for j in 2..N loop
          if NewBase(j) > Base(j) then
-            Delta := NewBase(j) - Base(j);
+            change := NewBase(j) - Base(j);
             for l in Top(j)..Base(j)+1 loop
-               StackSpace(l+Delta) := StackSpace(l);
+               stack(l+change) := stack(l);
             end loop;
             Base(j) := NewBase(j);
-            Top(j) := Top(j) + Delta;
+            Top(j) := Top(j) + change;
          end if;
       end loop;
    end moveStack;
-      
+end memoryManagement;

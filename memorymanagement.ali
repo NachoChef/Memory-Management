@@ -1,0 +1,47 @@
+V "GNAT Lib v2016"
+A -gnatc
+A -mtune=generic
+A -march=pentium4
+P NO ZX
+
+RN
+RV NO_FLOATING_POINT
+RV NO_ELABORATION_CODE
+
+U memorymanagement%s	memorymanagement.ads	23cd9c40 EE OO PK IL
+
+D memorymanagement.ads	20170410030642 23cd9c40 memorymanagement%s
+X 1 memorymanagement.ads
+9K9*memoryManagement 16l5 16e21
+10E9*stackElements 10e153 11r51
+10n27*Burris{10E9}
+10n35*Zhou{10E9}
+10n41*Shashidhar{10E9}
+10n53*Shannon{10E9}
+10n62*Yang{10E9}
+10n68*Smith{10E9}
+10n75*Wei{10E9}
+10n80*Rabieh{10E9}
+10n88*Song{10E9}
+10n94*Cho{10E9}
+10n99*Varol{10E9}
+10n106*Karabiyik{10E9}
+10n117*Cooper{10E9}
+10n125*McGuire{10E9}
+10n134*Hope{10E9}
+10n140*Pray{10E9}
+10n146*NoHope{10E9}
+11A9*StackSpace(10E9)<integer> 13r41 14r40
+12A9*growthSpace(integer)<integer> 13r66 14r65
+13U14*reallocate 13=26 13=53 13>79 13>102
+13a26 stack{11A9}
+13a53 top{12A9}
+13f79 EqualAllocate{float}
+13i102 K{integer}
+14U14*moveStack 14=25 14=52
+14a25 stack{11A9}
+14a52 top{12A9}
+15U14*makeStack 15>25 15>42
+15a25 inFile{string}
+15a42 outFile{string}
+
