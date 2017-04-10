@@ -6,33 +6,62 @@ P NO ZX
 
 RN
 RV NO_FLOATING_POINT
+RV NO_IO
 RV NO_ELABORATION_CODE
+RV SPARK_05
 
-U memorymanagement%s	memorymanagement.ads	23cd9c40 EE OO PK IL
+U memorymanagement%s	memorymanagement.ads	cc618045 EE OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.enumeration_io%s
 
-D memorymanagement.ads	20170410030642 23cd9c40 memorymanagement%s
-X 1 memorymanagement.ads
-9K9*memoryManagement 16l5 16e21
-10E9*stackElements 10e153 11r51
-10n27*Burris{10E9}
-10n35*Zhou{10E9}
-10n41*Shashidhar{10E9}
-10n53*Shannon{10E9}
-10n62*Yang{10E9}
-10n68*Smith{10E9}
-10n75*Wei{10E9}
-10n80*Rabieh{10E9}
-10n88*Song{10E9}
-10n94*Cho{10E9}
-10n99*Varol{10E9}
-10n106*Karabiyik{10E9}
-10n117*Cooper{10E9}
-10n125*McGuire{10E9}
-10n134*Hope{10E9}
-10n140*Pray{10E9}
-10n146*NoHope{10E9}
-11A9*StackSpace(10E9)<integer> 13r41 14r40
-12A9*growthSpace(integer)<integer> 13r66 14r65
+D ada.ads		20160516092928 3ffc8e18 ada%s
+D a-inteio.ads		20160516092932 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20160516092926 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20160516092928 119b8fb3 ada.streams%s
+D a-textio.ads		20160516092932 386df5d4 ada.text_io%s
+D a-tienio.ads		20160516092928 fc618ae6 ada.text_io.enumeration_io%s
+D a-tiinio.ads		20160516092928 aa04e5d6 ada.text_io.integer_io%s
+D interfac.ads		20160516092928 5ab55268 interfaces%s
+D i-cstrea.ads		20160516092926 e53d8b8e interfaces.c_streams%s
+D memorymanagement.ads	20170410220504 0247fc35 memorymanagement%s
+D system.ads		20160516092930 2da59038 system%s
+D s-crtl.ads		20160516092926 0ebbdb71 system.crtl%s
+D s-ficobl.ads		20160516092932 078245e4 system.file_control_block%s
+D s-parame.ads		20160516092932 7e2a0d7f system.parameters%s
+D s-wchcon.ads		20160516092930 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 19e8 10|7r6 7r19 7r44 7r57 18r29
+X 2 a-inteio.ads
+18K13*Integer_Text_IO[7|46] 10|7w23 7r61
+X 5 a-textio.ads
+49K13*Text_IO 471e16 10|7w10 7r48 18r33
+52P9*File_Type 10|17r105
+X 6 a-tienio.ads
+26k21*Enumeration_IO 55e31 10|18r41
+X 10 memorymanagement.ads
+9K9*memoryManagement 19l5 19e21
+10E9*stackElement 10e152 11r51 16r105 18r56
+10n26*Burris{10E9}
+10n34*Zhou{10E9}
+10n40*Shashidhar{10E9}
+10n52*Shannon{10E9}
+10n61*Yang{10E9}
+10n67*Smith{10E9}
+10n74*Wei{10E9}
+10n79*Rabieh{10E9}
+10n87*Song{10E9}
+10n93*Cho{10E9}
+10n98*Varol{10E9}
+10n105*Karabiyik{10E9}
+10n116*Cooper{10E9}
+10n124*McGuire{10E9}
+10n133*Hope{10E9}
+10n139*Pray{10E9}
+10n145*NoHope{10E9}
+11A9*StackSpace(10E9)<integer> 13r41 14r40 16r34 17r34
+12A9*growthSpace(integer)<integer> 13r66 14r65 16r59 17r59
 13U14*reallocate 13=26 13=53 13>79 13>102
 13a26 stack{11A9}
 13a53 top{12A9}
@@ -44,4 +73,15 @@ X 1 memorymanagement.ads
 15U14*makeStack 15>25 15>42
 15a25 inFile{string}
 15a42 outFile{string}
+16V13*push{boolean} 16=19 16=46 16>72 16>95
+16a19 stack{11A9}
+16a46 top{12A9}
+16i72 stackNum{integer}
+16e95 item{10E9}
+17U14*pop 17=19 17=46 17>72 17>95
+17a19 stack{11A9}
+17a46 top{12A9}
+17i72 stackNum{integer}
+17p95 outFile{5|52P9}
+18K12*elementIO[6|26] 18r75
 

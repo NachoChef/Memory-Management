@@ -2,9 +2,42 @@ package body memoryManagement is
 
    procedure makeStack (inFile : String; outFile : String) is
       input, output : File_Type;
-   begin
-      Open(inFile, input_file, input);
+      upper, lower, N : integer;
       
+   begin
+      Open(inFile, in_file, input);
+      Create(outFile, out_file, output);
+      Get(input, lower); Get(input, upper);
+      Get(input, N);
+      declare
+         stack : StackSpace (lower..upper);
+         top : growthSpace (1..N);
+         M : float := Float(upper - lower + 1);
+         operation : character;
+         stackNum : integer;
+         inName : stackElement;
+         Input_Error : Exception;
+         inserted : boolean;
+      begin
+         for i in 1..N loop
+            top(i) := Float'Floor(float(i-1/N) * M) + lower + 1;
+         end loop;
+         while not End_of_File(input) loop
+            Get (input, operation); Get (input, stackNum);
+            case(operation) is
+               when 'I' =>
+                  Get (input, inName);
+                  inserted := push (stack, top, stackNum, inName);
+                  if (not inserted) then
+                     reallocate (stack, top, 0.15, stackNum);
+                  end if;
+               when 'D' =>
+                  pop (stack, top, stackNum, outFile);
+               when others =>
+                  raise Input_Error;
+            end case;
+         end loop;
+      end;
    end makeStack;
 
    procedure reallocate (stack : in out StackSpace; top : in out growthSpace; EqualAllocate : float; K : integer) is
@@ -74,4 +107,26 @@ package body memoryManagement is
          end if;
       end loop;
    end moveStack;
+   
+   function push (stack : in out StackSpace; top : in out growthSpace; stackNum : in integer; item : in stackElement) return boolean is
+   begin
+      if (stack(top(stackNum)) > stack(base(stackNum + 1))) then
+         return false;
+      else
+         stack(top(stackNum)) := stackElement;
+         top(stackNum) := top(stackNum) + 1;
+         return true;
+      end if;
+   end push;
+   
+   procedure pop (stack : in out StackSpace; top : in out growthSpace; stackNum : in integer; outFile : File_Type) is
+   begin
+      if (stack(base(stackNum)) < stack(top(stackNum - 1))) then
+         null;
+      else
+         put_line(outFile, "Popping stack " & Integer'Image(stackNum) & ", value := " & stack(top(stackNum))); 
+         top(stackNum) := top(stackNum) - 1;
+      end if;
+   end pop;
+   
 end memoryManagement;
