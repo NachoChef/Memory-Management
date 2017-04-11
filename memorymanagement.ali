@@ -1,7 +1,8 @@
 V "GNAT Lib v2016"
+A -mmacosx-version-min=10.11.6
 A -gnatc
-A -mtune=generic
-A -march=pentium4
+A -mtune=core2
+A -fPIC
 P NO ZX
 
 RN
@@ -18,19 +19,19 @@ W ada.text_io.enumeration_io%s
 
 D ada.ads		20160516092928 3ffc8e18 ada%s
 D a-inteio.ads		20160516092932 f64b89a4 ada.integer_text_io%s
-D a-ioexce.ads		20160516092926 e4a01f64 ada.io_exceptions%s
-D a-stream.ads		20160516092928 119b8fb3 ada.streams%s
+D a-ioexce.ads		20160516092927 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20160516092929 119b8fb3 ada.streams%s
 D a-textio.ads		20160516092932 386df5d4 ada.text_io%s
 D a-tienio.ads		20160516092928 fc618ae6 ada.text_io.enumeration_io%s
 D a-tiinio.ads		20160516092928 aa04e5d6 ada.text_io.integer_io%s
 D interfac.ads		20160516092928 5ab55268 interfaces%s
-D i-cstrea.ads		20160516092926 e53d8b8e interfaces.c_streams%s
-D memorymanagement.ads	20170410220504 0247fc35 memorymanagement%s
-D system.ads		20160516092930 2da59038 system%s
-D s-crtl.ads		20160516092926 0ebbdb71 system.crtl%s
-D s-ficobl.ads		20160516092932 078245e4 system.file_control_block%s
+D i-cstrea.ads		20160516092927 e53d8b8e interfaces.c_streams%s
+D memorymanagement.ads	20170411145437 0247fc35 memorymanagement%s
+D system.ads		20160516092931 c3282aa7 system%s
+D s-crtl.ads		20160516092927 0ebbdb71 system.crtl%s
+D s-ficobl.ads		20160516092933 078245e4 system.file_control_block%s
 D s-parame.ads		20160516092932 7e2a0d7f system.parameters%s
-D s-wchcon.ads		20160516092930 1b7d22d2 system.wch_con%s
+D s-wchcon.ads		20160516092931 1b7d22d2 system.wch_con%s
 X 1 ada.ads
 16K9*Ada 19e8 10|7r6 7r19 7r44 7r57 18r29
 X 2 a-inteio.ads

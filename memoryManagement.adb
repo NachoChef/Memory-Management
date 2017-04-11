@@ -3,15 +3,18 @@ package body memoryManagement is
    procedure makeStack (inFile : String; outFile : String) is
       input, output : File_Type;
       upper, lower, N : integer;
-      
    begin
-      Open(inFile, in_file, input);
-      Create(outFile, out_file, output);
+      Open(input, in_file, inFile);
+      Create(output, out_file, outFile);
       Get(input, lower); Get(input, upper);
       Get(input, N);
       declare
          stack : StackSpace (lower..upper);
          top : growthSpace (1..N);
+         base : growthSpace (1..N);
+         oldTop : growthSpace (1..N+1);
+         newBase : aliased growthSpace (1..N) := oldTop;
+         growth : aliased growthSpace (2..N+1) := oldTop(1..N);
          M : float := Float(upper - lower + 1);
          operation : character;
          stackNum : integer;
@@ -20,7 +23,8 @@ package body memoryManagement is
          inserted : boolean;
       begin
          for i in 1..N loop
-            top(i) := Float'Floor(float(i-1/N) * M) + lower + 1;
+            top(i) := Integer(Float'Floor((Float(i) - 1.0/Float(N)) * M)) + lower + 1;
+            base(i) := top(i);
          end loop;
          while not End_of_File(input) loop
             Get (input, operation); Get (input, stackNum);
@@ -32,7 +36,7 @@ package body memoryManagement is
                      reallocate (stack, top, 0.15, stackNum);
                   end if;
                when 'D' =>
-                  pop (stack, top, stackNum, outFile);
+                  pop (stack, top, stackNum, output);
                when others =>
                   raise Input_Error;
             end case;
@@ -40,13 +44,16 @@ package body memoryManagement is
       end;
    end makeStack;
 
-   procedure reallocate (stack : in out StackSpace; top : in out growthSpace; EqualAllocate : float; K : integer) is
+   procedure reallocate (stack : in out StackSpace; top : in out growthSpace; base : in out growthSpace; oldTop : in out growthSpace; EqualAllocate : float; K : integer) is
       AvailSpace : integer := stack'Last - stack'First;
       TotalInc : integer := 0;
       j : integer := stack'Last;
-      N : constant integer := stack'Last;
+      N : constant integer := (top'Last - top'First);
       Insufficient_Memory : exception;
       GrowthAllocate, Alpha, Beta, Tau, Sigma : float;
+      MinSpace : CONSTANT Integer := 7;
+      newBase : aliased growthSpace (1..N) := oldTop;
+      Growth : aliased growthSpace (2..N) := oldTop(1..N-1);
    begin
       while j > 0 loop
          AvailSpace := AvailSpace - (Top(j) - Base(j));
@@ -58,8 +65,7 @@ package body memoryManagement is
          end if;
          j := j-1;
       end loop;
-      --if AvailSpace < (MinSpace - 1) then
-      if AvailSpace < 10 then  
+      if AvailSpace < (MinSpace - 1) then
          raise Insufficient_Memory;
          --terminate
       end if;
@@ -73,7 +79,7 @@ package body memoryManagement is
          Sigma := Tau;
       end loop;
       Top(K) := Top(K) - 1;
-      --moveStack
+      moveStack(stack, top);
       Top(K) := Top(K) + 1;
       --insert prev item
       for j in 1..stack'Length loop
@@ -113,18 +119,18 @@ package body memoryManagement is
       if (stack(top(stackNum)) > stack(base(stackNum + 1))) then
          return false;
       else
-         stack(top(stackNum)) := stackElement;
+         stack(top(stackNum)) := item;
          top(stackNum) := top(stackNum) + 1;
          return true;
       end if;
    end push;
    
-   procedure pop (stack : in out StackSpace; top : in out growthSpace; stackNum : in integer; outFile : File_Type) is
+   procedure pop (stack : in out StackSpace; top : in out growthSpace; base : in out growthSpace; stackNum : in integer; outFile : File_Type) is
    begin
-      if (stack(base(stackNum)) < stack(top(stackNum - 1))) then
-         null;
+      if (stack(base(stackNum)) = stack(base(stackNum))) then
+         null; --underflow
       else
-         put_line(outFile, "Popping stack " & Integer'Image(stackNum) & ", value := " & stack(top(stackNum))); 
+         put(outFile, "Popping stack " & Integer'Image(stackNum) & ", value := "); put(outFile, stack(top(stackNum))); New_Line;
          top(stackNum) := top(stackNum) - 1;
       end if;
    end pop;
