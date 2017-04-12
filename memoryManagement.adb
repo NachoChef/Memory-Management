@@ -10,7 +10,7 @@ package body memoryManagement is
       put(lower); put(upper); put(L0); put(M); put(N); New_Line;
       put("N = "); put(N); New_Line;
       declare
-         stack : StackSpace (lower..upper);
+         stack : StackSpace (lower..upper) := (others => Blank);
          top : growthSpace (1..N+1);
          base : growthSpace (1..N+1);
          oldTop : growthSpace (1..N+1);
@@ -24,9 +24,10 @@ package body memoryManagement is
          for i in 2..N+1 loop
             top(i) := Integer(Float'Floor(((Float(i) - 1.0)/(Float(N))) * Float(M))) + L0;
             put("top " & Integer'Image(i)); put(" = "); put(top(i)); New_Line;
-            base(i) := top(i);
          end loop;
+         base := top;
          oldTop := top;
+         
          while not End_of_File(input) loop
             Get (input, operation); Get (input, stackNum);
             case(operation) is
@@ -34,8 +35,8 @@ package body memoryManagement is
                   Get (input, inName);
                   inserted := push (stack, top, base, stackNum, inName);
                   if (not inserted) then
-                     put("Reallocating..."); New_Line;
-                     reallocate (stack, top, base, oldTop, 0.15, stackNum);
+                     put_line("Reallocating...");
+                     reallocate (stack, top, base, oldTop, 0.15, stackNum, inName);
                   end if;
                when 'D' =>
                  pop (stack, top, base, stackNum, output);
@@ -46,47 +47,59 @@ package body memoryManagement is
       end;
    end makeStack;
 
-   procedure reallocate (stack : in out StackSpace; top : in out growthSpace; base : in out growthSpace; oldTop : in out growthSpace; EqualAllocate : float; K : integer) is
-      AvailSpace : integer := base'Last - base'First;
+   procedure reallocate (stack : in out StackSpace; top : in out growthSpace; base : in out growthSpace; oldTop : in out growthSpace; EqualAllocate : float; K : integer; item : in stackElement) is
+      AvailSpace : integer := base(base'Last) - base(base'First);
       TotalInc : integer := 0;
-      j : integer := base'Last - base'First;
+      j : integer := base'Last-1;
       N : constant integer := (top'Last - top'First);
       Insufficient_Memory : exception;
       GrowthAllocate, Alpha, Beta, Tau : float;
       Sigma : Float := 0.0;
-      MinSpace : CONSTANT Integer := 7;
+      MinSpace : CONSTANT Integer := -5;
    begin
       while j > 0 loop
          put_line("J = " & Integer'Image(j));
-         AvailSpace := AvailSpace - (Top(j) - Base(j));
-         if Top(j) > OldTop(j) then
-            OldTop(j+1) := Top(j) - oldTop(j);
+         put_line("Top" & Integer'Image(j) & " is" & Integer'Image(top(j)));put_line("Base" & Integer'Image(j) & " is" & Integer'Image(base(j)));
+         AvailSpace := AvailSpace - Top(j) + Base(j);
+         put_line("Availspace:" & Integer'Image(AvailSpace));
+         if Top(j) > OldTop(j) then --set growth
+            OldTop(j+1) := Top(j) - oldTop(j);--growth
             TotalInc := TotalInc + oldTop(j+1);
          else
             oldTop(j+1) := 0;
          end if;
          j := j-1;
       end loop;
+      
+      for i in 2..base'Last loop
+         put_line("growth:" & Integer'Image(oldtop(i)));
+      end loop;
+      
       if AvailSpace < (MinSpace - 1) then
          raise Insufficient_Memory;
          --terminate
       end if;
       GrowthAllocate := 1.0 - EqualAllocate;
-      Alpha := EqualAllocate * Float(AvailSpace) / Float(N);
-      Beta := GrowthAllocate * Float(AvailSpace) / Float(TotalInc);
+      Alpha := EqualAllocate * (Float(AvailSpace) / Float(N));
+      Beta := GrowthAllocate * (Float(AvailSpace) / Float(TotalInc));
       oldTop(1) := Base(1);
       for j in 2..N loop
          Tau := float(Sigma) + Alpha + Float(oldTop(j)) * Beta;
-         OldTop(j) := OldTop(j-1) + (Top(j-1) - Base(j-1)) + Integer(Float'Floor(Tau)) - Integer(Float'Floor(Sigma));
+         OldTop(j) := OldTop(j-1) + Top(j-1) - Base(j-1) + Integer(Float'Floor(Tau)) - Integer(Float'Floor(Sigma));
          Sigma := Tau;
       end loop;
       Top(K) := Top(K) - 1;
       moveStack(stack, top, base, oldTop);
       Top(K) := Top(K) + 1;
-      --insert prev item
-      for j in 1..stack'Length loop
+      stack(Top(K)) := item;  --inserted
+      for j in 1..base'Last-1 loop
          OldTop(j) := Top(j);
       end loop;
+      
+      for j in base(1)+1..base(base'Last) loop
+         put("loc" & Integer'Image(j) & " is "); put((stack(j))); New_Line;      
+      end loop;
+      
    end reallocate;   
       
    procedure moveStack (stack : in out StackSpace; top : in out growthSpace; base : in out growthSpace; oldTop : in out growthSpace) is
@@ -107,8 +120,8 @@ package body memoryManagement is
       for j in 2..N loop
          if oldTop(j) > Base(j) then
             change := oldTop(j) - Base(j);
-            for L in reverse Base(j)+1..top(j) loop   --error errywhere
-               stack(L+change) := stack(L);  --error here tho
+            for L in reverse Base(j)+1..top(j) loop 
+               stack(L+change) := stack(L); 
             end loop;
             Base(j) := oldTop(j);
             Top(j) := Top(j) + change;
@@ -135,6 +148,7 @@ package body memoryManagement is
          put_line("UNDERFLOW");
       else
          put("Popping stack" & Integer'Image(stackNum) & ", value <= "); put(stack(top(stackNum)-1)); New_Line;
+         stack(top(stackNum)) := Blank;
          top(stackNum) := top(stackNum) - 1;
       end if;
    end pop;
