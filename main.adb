@@ -4,5 +4,5 @@ with memoryManagement; use memoryManagement;
 procedure main is
    package myMem renames memoryManagement;
 begin
-   myMem.makeStack("input.txt", "output.txt");
+   myMem.makeStack("B_input.txt", "B_output.txt");
 end main;
