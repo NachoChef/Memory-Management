@@ -20,15 +20,6 @@ procedure main is
    package MonthIO is new Ada.Text_IO.Enumeration_IO(MonthName);
    use MonthIO;
    
-   function "=" (X, Y : Data) return boolean is
-   begin
-      if X.Month = Y.Month and X.Day = Y.Day and X.Year = Y.Year then
-         return true;
-      else
-         return false;
-      end if;
-   end "=";
-   
    procedure aPut(X : Data) is
    begin
       if X = Empty then
@@ -40,30 +31,14 @@ procedure main is
       end if;
    end;
    
-   --uses an unbounded string to read the line
-   --then parses through the string and slices data out
    procedure aGet(input : File_Type; X : out Data) is
-      line : Unbounded_String;
-      i : Integer := 1;
-      
+      --initial get prevents getting ""
+      temp : Unbounded_String := To_Unbounded_String(Get_Line(input));
    begin
-      line := To_Unbounded_String(Get_Line(input));
-      line := To_Unbounded_String(Get_Line(input));
-      --move until end of month found
-      while Slice(line, 1, i+1)(i+1) /= ' ' loop
-      
-         i := i + 1;
-         put(i, Width => 3);
-      end loop;
-      --convert to month type
-      X.Month := MonthName'Value(Slice(line, 1, i));
-      put(X.Month);
-      i := i + 1;
-      X.Day := Integer'Value(Slice(line, i, i+1));
-      put(X.Day);
-      i := i + 4;
-      X.Year := Integer'Value(Slice(line, i, i+4));
-      put(X.Year);
+      temp := To_Unbounded_String(Get_Line(input));
+      X.Month := MonthName'Value(To_String(temp));
+      Get(input, X.Day);
+      Get(input, X.Year);
    end;
    
    procedure bPut(X : Unbounded_String) is
@@ -73,6 +48,8 @@ procedure main is
    
    procedure bGet(input : File_Type; X : out Unbounded_String) is
    begin
+      --first get prevents getting ""
+      X := To_Unbounded_String(Get_Line(input));
       X := To_Unbounded_String(Get_Line(input));
    end;
    

@@ -1,66 +1,104 @@
 0
 50
 4
-13
+15
 3
 I
 2
-January 15, 1956
+January
+15
+1956
 I
 2
-February 14, 1957
+February
+14
+1957
 I
 3
-September 16, 1946
+September
+16
+1946
 I
 2
-September 17, 1842
+September
+17
+1842
 I
 2
-April  1, 2015
+April
+1
+2015
 I
 1
-December 24, 1996
+December
+24
+1996
 D
 1
 I
 3
-March 16, 1992
+March
+16
+1992
 D
 1
 I
 2
-January 15, 1956
+January
+15
+1956
 I
 3
-April  4, 1492
+April
+4
+1492
 I
 3
-November  7, 1776
+November
+7
+1776
 I
 3
-June 12, 1994
+June
+12
+1994
 I
 2
-July  4, 1776
+July
+4
+1776
 I
 2
-January 15, 2012
+January
+15
+2012
 I
 3
-December  6, 1991
+December
+6
+1991
 I
 3
-March  5, 1886
+March
+5
+1886
 I
 1
-October 24, 1996
+October
+24
+1996
 I
 1
-November 23, 1996
+November
+23
+1996
 I
 1
-November  2, 1990
+November
+2
+1990
 I
 3
-September 14, 1998
+September
+14
+1998

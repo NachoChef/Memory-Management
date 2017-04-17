@@ -1,0 +1,186 @@
+         LB         UB         L0          M          N
+          0         50          4         15          3
+              BASE           TOP      OLDTOP
+Stack 1          4	          4	          4
+Stack 2          7	          7	          7
+Stack 3         11	         11	         11
+
+loc 4 is Empty
+loc 5 is Empty
+loc 6 is Empty
+loc 7 is Empty
+loc 8 is Empty
+loc 9 is Empty
+loc 10 is Empty
+loc 11 is Empty
+loc 12 is Empty
+loc 13 is Empty
+loc 14 is Empty
+loc 15 is Empty
+
+Inserting into stack 2 item => JANUARY 15 1956 at stack location 8.
+Inserting into stack 2 item => FEBRUARY 14 1957 at stack location 9.
+Inserting into stack 3 item => SEPTEMBER 16 1946 at stack location 12.
+Inserting into stack 2 item => SEPTEMBER 17 1842 at stack location 10.
+Inserting into stack 2 item => APRIL  1 2015 at stack location 11.
+Inserting into stack 1 item => DECEMBER 24 1996 at stack location 5.
+Popping stack 1, value <= DECEMBER 24 1996
+Inserting into stack 3 item => MARCH 16 1992 at stack location 13.
+Delete resulting in underflow in stack 1
+Continuing...
+Inserting into stack 2 item => JANUARY 15 1956 has caused overflow!
+
+Current values:
+              BASE           TOP      OLDTOP
+Stack 1          4	          4	          4
+Stack 2          7	         12	          7
+Stack 3         11	         13	         11
+
+loc 4 is Empty
+loc 5 is Empty
+loc 6 is Empty
+loc 7 is Empty
+loc 8 is JANUARY 15 1956
+loc 9 is FEBRUARY 14 1957
+loc 10 is SEPTEMBER 17 1842
+loc 11 is APRIL  1 2015
+loc 12 is SEPTEMBER 16 1946
+loc 13 is MARCH 16 1992
+loc 14 is Empty
+loc 15 is Empty
+
+
+Reallocating...
+
+New values:
+              BASE           TOP      OLDTOP
+Stack 1          4	          4	          4
+Stack 2          4	          9	          9
+Stack 3         11	         13	         13
+
+loc 4 is Empty
+loc 5 is JANUARY 15 1956
+loc 6 is FEBRUARY 14 1957
+loc 7 is SEPTEMBER 17 1842
+loc 8 is APRIL  1 2015
+loc 9 is JANUARY 15 1956
+loc 10 is Empty
+loc 11 is Empty
+loc 12 is SEPTEMBER 16 1946
+loc 13 is MARCH 16 1992
+loc 14 is Empty
+loc 15 is Empty
+
+Inserting into stack 3 item => APRIL  4 1492 at stack location 14.
+Inserting into stack 3 item => NOVEMBER  7 1776 at stack location 15.
+Inserting into stack 3 item => JUNE 12 1994 has caused overflow!
+
+Current values:
+              BASE           TOP      OLDTOP
+Stack 1          4	          4	          4
+Stack 2          4	          9	          9
+Stack 3         11	         16	         13
+
+loc 4 is Empty
+loc 5 is JANUARY 15 1956
+loc 6 is FEBRUARY 14 1957
+loc 7 is SEPTEMBER 17 1842
+loc 8 is APRIL  1 2015
+loc 9 is JANUARY 15 1956
+loc 10 is Empty
+loc 11 is Empty
+loc 12 is SEPTEMBER 16 1946
+loc 13 is MARCH 16 1992
+loc 14 is APRIL  4 1492
+loc 15 is NOVEMBER  7 1776
+
+
+Reallocating...
+
+New values:
+              BASE           TOP      OLDTOP
+Stack 1          4	          4	          4
+Stack 2          4	          9	          9
+Stack 3          9	         14	         14
+
+loc 4 is Empty
+loc 5 is JANUARY 15 1956
+loc 6 is FEBRUARY 14 1957
+loc 7 is SEPTEMBER 17 1842
+loc 8 is APRIL  1 2015
+loc 9 is JANUARY 15 1956
+loc 10 is SEPTEMBER 16 1946
+loc 11 is MARCH 16 1992
+loc 12 is APRIL  4 1492
+loc 13 is NOVEMBER  7 1776
+loc 14 is JUNE 12 1994
+loc 15 is Empty
+
+Inserting into stack 2 item => JULY  4 1776 has caused overflow!
+
+Current values:
+              BASE           TOP      OLDTOP
+Stack 1          4	          4	          4
+Stack 2          4	         10	          9
+Stack 3          9	         14	         14
+
+loc 4 is Empty
+loc 5 is JANUARY 15 1956
+loc 6 is FEBRUARY 14 1957
+loc 7 is SEPTEMBER 17 1842
+loc 8 is APRIL  1 2015
+loc 9 is JANUARY 15 1956
+loc 10 is SEPTEMBER 16 1946
+loc 11 is MARCH 16 1992
+loc 12 is APRIL  4 1492
+loc 13 is NOVEMBER  7 1776
+loc 14 is JUNE 12 1994
+loc 15 is Empty
+
+
+Reallocating...
+
+New values:
+              BASE           TOP      OLDTOP
+Stack 1          4	          4	          4
+Stack 2          4	         10	         10
+Stack 3         10	         15	         15
+
+loc 4 is Empty
+loc 5 is JANUARY 15 1956
+loc 6 is FEBRUARY 14 1957
+loc 7 is SEPTEMBER 17 1842
+loc 8 is APRIL  1 2015
+loc 9 is JANUARY 15 1956
+loc 10 is JULY  4 1776
+loc 11 is SEPTEMBER 16 1946
+loc 12 is MARCH 16 1992
+loc 13 is APRIL  4 1492
+loc 14 is NOVEMBER  7 1776
+loc 15 is JUNE 12 1994
+
+Inserting into stack 2 item => JANUARY 15 2012 has caused overflow!
+
+Current values:
+              BASE           TOP      OLDTOP
+Stack 1          4	          4	          4
+Stack 2          4	         11	         10
+Stack 3         10	         15	         15
+
+loc 4 is Empty
+loc 5 is JANUARY 15 1956
+loc 6 is FEBRUARY 14 1957
+loc 7 is SEPTEMBER 17 1842
+loc 8 is APRIL  1 2015
+loc 9 is JANUARY 15 1956
+loc 10 is JULY  4 1776
+loc 11 is SEPTEMBER 16 1946
+loc 12 is MARCH 16 1992
+loc 13 is APRIL  4 1492
+loc 14 is NOVEMBER  7 1776
+loc 15 is JUNE 12 1994
+
+
+Reallocating...
+
+Out of memory! Terminating...

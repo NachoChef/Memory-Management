@@ -10,7 +10,8 @@ package body memoryManagement is
       upper, lower, N, L0, M : integer;
    begin
       Open(input, in_file, inFile);
-      Get(input, lower); Get(input, upper); Get(input, L0); Get(input, M); Get(input, N);
+      Get(input, lower); Get(input, upper); Get(input, L0); 
+      Get(input, M); Get(input, N);
       Set_Col(10); put("LB"); 
       Set_Col(21); put("UB"); 
       Set_Col(32); put("L0");
@@ -32,21 +33,21 @@ package body memoryManagement is
          base(1) := L0;
          stackInfo(1) := L0;
          for i in 2..N loop
-            top(i) := Integer(Float'Floor(((Float(i) - 1.0)/(Float(N))) * Float(M-L0))) + L0;
+            top(i) := Integer(Float'Floor(((Float(i) - 1.0)/(Float(N))) 
+                        * Float(M-L0))) + L0;
             base(i) := top(i);
             stackInfo(i) := top(i);
          end loop;
          base(N+1) := M;
-         
+         printInfo (stack, top, base, stackInfo);
          while not End_of_File(input) loop
             Get(input, operation); Get(input, stackNum);
             case(operation) is
                when 'I' =>
                   myGet(input, inName);
-                  myGet(input, inName);
                   inserted := push (stack, top, base, stackNum, inName);
                   if (not inserted) then
-                     reallocate (stack, top, base, stackInfo, 0.15, stackNum, inName);
+                     reallocate(stack, top, base, stackInfo, 0.15, stackNum, inName);
                   end if;
                when 'D' =>
                  pop (stack, top, base, stackNum);
@@ -57,7 +58,9 @@ package body memoryManagement is
       end;
    end makeStack;
 
-   procedure reallocate (stack : in out StackSpace; top : in out growthSpace; base : in out growthSpace; stackInfo : in out growthSpace; EqualAllocate : float; K : integer; item : in element) is
+   procedure reallocate (stack : in out StackSpace; top : in out growthSpace; 
+                        base : in out growthSpace; stackInfo : in out growthSpace;
+                        EqualAllocate : float; K : integer; item : in element) is
       AvailSpace : integer := base(base'Last) - base(base'First);
       TotalInc : integer := 0;
       j : integer := base'Last-1; --# stacks
@@ -97,7 +100,9 @@ package body memoryManagement is
       stackInfo(1) := Base(1);
       for j in 2..N loop
          Tau := float(Sigma) + Alpha + Float(stackInfo(j)) * Beta;
-         stackInfo(j) := stackInfo(j-1) + Top(j-1) - Base(j-1) + Integer(Float'Floor(Tau)) - Integer(Float'Floor(Sigma));
+         stackInfo(j) := stackInfo(j-1) + Top(j-1) - Base(j-1)  
+                         + Integer(Float'Floor(Tau))
+                         - Integer(Float'Floor(Sigma));
          Sigma := Tau;
       end loop;
       Top(K) := Top(K) - 1;
@@ -112,7 +117,8 @@ package body memoryManagement is
       printInfo (stack, top, base, stackInfo);
    end reallocate;   
       
-   procedure moveStack (stack : in out StackSpace; top : in out growthSpace; base : in out growthSpace; stackInfo : in out growthSpace) is
+   procedure moveStack (stack : in out StackSpace; top : in out growthSpace; 
+                        base : in out growthSpace; stackInfo : in out growthSpace) is
       change : integer;
       N : integer := base'Last-base'First;
    begin
@@ -141,31 +147,41 @@ package body memoryManagement is
       end loop;
    end moveStack;
    
-   function push (stack : in out StackSpace; top : in out growthSpace; base : in growthSpace; stackNum : in integer; item : in element) return boolean is
+   function push (stack : in out StackSpace; top : in out growthSpace;
+                  base : in growthSpace; stackNum : in integer; 
+                  item : in element) return boolean is
    begin
       top(stackNum) := top(stackNum) + 1;
-      if (top(stackNum) > base(stackNum + 1)) then
-         put("Overflow in stack"); put(Integer'Image(stackNum));put("!"); New_Line;
+      if top(stackNum) > base(stackNum + 1) then
+         put("Inserting into stack" & Integer'Image(stackNum) & " item => "); 
+         myPut(item); put(" has caused overflow!");New_Line;
          return false;
       else
-         put("Inserting into stack" & Integer'Image(stackNum) & " item => "); myPut(item); put(" at stack location" & Integer'Image(top(stackNum))); Put(".");New_Line;
+         put("Inserting into stack" & Integer'Image(stackNum) & " item => "); 
+         myPut(item); put(" at stack location" & Integer'Image(top(stackNum))); 
+         put_line(".");
          stack(top(stackNum)) := item;
          return true;
       end if;
    end push;
    
-   procedure pop (stack : in out StackSpace; top : in out growthSpace; base : in growthSpace; stackNum : in integer) is
+   procedure pop (stack : in out StackSpace; top : in out growthSpace;
+                  base : in growthSpace; stackNum : in integer) is
    begin
       if (top(stackNum) = base(stackNum)) then
-         put_line("UNDERFLOW IN STACK" & Integer'Image(stackNum));
+         put_line("Delete resulted in underflow in stack" & Integer'Image(stackNum));
+         put_line("Continuing...");
       else
-         put("Popping stack" & Integer'Image(stackNum) & ", value <= "); myPut(stack(top(stackNum))); New_Line;
-         stack(top(stackNum)) := stack(base(1));   --will always be whatever designated empty value is
+         put("Popping stack" & Integer'Image(stackNum) & ", value <= "); 
+         myPut(stack(top(stackNum))); New_Line;
+         --Base(1) will always index an 'empty' location
+         stack(top(stackNum)) := stack(base(1));
          top(stackNum) := top(stackNum) - 1;
       end if;
    end pop;
    
-   procedure printInfo (stack : StackSpace; top : growthSpace; base : growthSpace; stackInfo : growthSpace) is
+   procedure printInfo (stack : StackSpace; top : growthSpace; base : growthSpace; 
+                        stackInfo : growthSpace) is
    begin
       Set_Col(15); put("BASE");
       Set_Col(30); put("TOP");
@@ -181,10 +197,10 @@ package body memoryManagement is
          New_Line;
       end loop;
       New_Line;
-      for j in base(1)+1..base(base'Last) loop
+      for j in base(1)..base(base'Last) loop
          put("loc" & Integer'Image(j) & " is "); myPut(stack(j)); New_Line;      
       end loop;
-      
+      New_Line;
    end printInfo;
    
 end memoryManagement;
