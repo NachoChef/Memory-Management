@@ -18,7 +18,7 @@ package ada_main is
                     "GNAT Version: GPL 2016 (20160515-49)" & ASCII.NUL;
    pragma Export (C, GNAT_Version, "__gnat_version");
 
-   Ada_Main_Program_Name : constant String := "_ada_main" & ASCII.NUL;
+   Ada_Main_Program_Name : constant String := "_ada_test" & ASCII.NUL;
    pragma Export (C, Ada_Main_Program_Name, "__gnat_ada_main_program_name");
 
    procedure adainit;
@@ -35,8 +35,8 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#abb9f080#;
-   pragma Export (C, u00001, "mainB");
+   u00001 : constant Version_32 := 16#cf2d2746#;
+   pragma Export (C, u00001, "testB");
    u00002 : constant Version_32 := 16#b6df930e#;
    pragma Export (C, u00002, "system__standard_libraryB");
    u00003 : constant Version_32 := 16#ddf3267e#;
@@ -327,36 +327,24 @@ package ada_main is
    pragma Export (C, u00145, "system__stream_attributesB");
    u00146 : constant Version_32 := 16#8bc30a4e#;
    pragma Export (C, u00146, "system__stream_attributesS");
-   u00147 : constant Version_32 := 16#f08789ae#;
-   pragma Export (C, u00147, "ada__text_io__enumeration_auxB");
-   u00148 : constant Version_32 := 16#52f1e0af#;
-   pragma Export (C, u00148, "ada__text_io__enumeration_auxS");
-   u00149 : constant Version_32 := 16#f8f1dac0#;
-   pragma Export (C, u00149, "memorymanagementB");
-   u00150 : constant Version_32 := 16#14543d04#;
-   pragma Export (C, u00150, "memorymanagementS");
-   u00151 : constant Version_32 := 16#fd83e873#;
-   pragma Export (C, u00151, "system__concat_2B");
-   u00152 : constant Version_32 := 16#2f0547e8#;
-   pragma Export (C, u00152, "system__concat_2S");
-   u00153 : constant Version_32 := 16#2b70b149#;
-   pragma Export (C, u00153, "system__concat_3B");
-   u00154 : constant Version_32 := 16#26d5cc9d#;
-   pragma Export (C, u00154, "system__concat_3S");
-   u00155 : constant Version_32 := 16#75d08c2c#;
-   pragma Export (C, u00155, "system__fat_fltS");
-   u00156 : constant Version_32 := 16#d0432c8d#;
-   pragma Export (C, u00156, "system__img_enum_newB");
-   u00157 : constant Version_32 := 16#4ce996f8#;
-   pragma Export (C, u00157, "system__img_enum_newS");
-   u00158 : constant Version_32 := 16#4b37b589#;
-   pragma Export (C, u00158, "system__val_enumB");
-   u00159 : constant Version_32 := 16#96bfd2ad#;
-   pragma Export (C, u00159, "system__val_enumS");
-   u00160 : constant Version_32 := 16#ee101ba4#;
-   pragma Export (C, u00160, "system__memoryB");
-   u00161 : constant Version_32 := 16#74d8f60c#;
-   pragma Export (C, u00161, "system__memoryS");
+   u00147 : constant Version_32 := 16#f8ed251b#;
+   pragma Export (C, u00147, "memorymanagementB");
+   u00148 : constant Version_32 := 16#d8456cbd#;
+   pragma Export (C, u00148, "memorymanagementS");
+   u00149 : constant Version_32 := 16#fd83e873#;
+   pragma Export (C, u00149, "system__concat_2B");
+   u00150 : constant Version_32 := 16#2f0547e8#;
+   pragma Export (C, u00150, "system__concat_2S");
+   u00151 : constant Version_32 := 16#2b70b149#;
+   pragma Export (C, u00151, "system__concat_3B");
+   u00152 : constant Version_32 := 16#26d5cc9d#;
+   pragma Export (C, u00152, "system__concat_3S");
+   u00153 : constant Version_32 := 16#75d08c2c#;
+   pragma Export (C, u00153, "system__fat_fltS");
+   u00154 : constant Version_32 := 16#ee101ba4#;
+   pragma Export (C, u00154, "system__memoryB");
+   u00155 : constant Version_32 := 16#74d8f60c#;
+   pragma Export (C, u00155, "system__memoryS");
    --  BEGIN ELABORATION ORDER
    --  ada%s
    --  ada.characters%s
@@ -372,8 +360,6 @@ package ada_main is
    --  system.htable%s
    --  system.img_bool%s
    --  system.img_bool%b
-   --  system.img_enum_new%s
-   --  system.img_enum_new%b
    --  system.img_int%s
    --  system.img_int%b
    --  system.img_lli%s
@@ -416,7 +402,6 @@ package ada_main is
    --  system.img_uns%b
    --  system.img_wiu%s
    --  system.img_wiu%b
-   --  system.val_enum%s
    --  system.val_int%s
    --  system.val_lli%s
    --  system.val_llu%s
@@ -427,7 +412,6 @@ package ada_main is
    --  system.val_llu%b
    --  system.val_lli%b
    --  system.val_int%b
-   --  system.val_enum%b
    --  system.wch_con%s
    --  system.wch_con%b
    --  system.wch_cnv%s
@@ -508,17 +492,15 @@ package ada_main is
    --  ada.exceptions%b
    --  ada.text_io%s
    --  ada.text_io%b
-   --  ada.text_io.enumeration_aux%s
    --  ada.text_io.generic_aux%s
    --  ada.text_io.generic_aux%b
-   --  ada.text_io.enumeration_aux%b
    --  ada.text_io.integer_aux%s
    --  ada.text_io.integer_aux%b
    --  ada.integer_text_io%s
    --  ada.integer_text_io%b
    --  memorymanagement%s
    --  memorymanagement%b
-   --  main%b
+   --  test%b
    --  END ELABORATION ORDER
 
 

@@ -37,7 +37,15 @@ type StackSpace is array(Integer range <>) of Unbounded_String;
    end push;
    str : String(1..4);
 begin
-   put(Integer'Value("01"));
+   open(file, in_file, "B_input.txt");
+   str := get_line(file);
+   put(str); 
+   for i in 1..18 loop
+      test := ASU.To_Unbounded_String(Ada.Text_IO.Get_Line(file));
+      put(ASU.To_String(test));New_Line;
+   end loop;
+   
+   inserted := push (stack,test);
    -- put_line("Part A:");
    --hashB.mainMem("Words200D16.txt", 128, 0.40, hashB.linear, hashB.mine);
 --    

@@ -1,100 +1,107 @@
 V "GNAT Lib v2016"
 M P W=b
-A -g
-P ZX
+A -gnatc
+A -mtune=generic
+A -march=pentium4
+P NO ZX
 
 RN
-RV NO_ENUMERATION_MAPS
-RV NO_EXCEPTION_HANDLERS
-RV NO_EXCEPTIONS
 RV NO_IO
-RV NO_STANDARD_STORAGE_POOLS
+RV NO_LONG_LONG_INTEGERS
+RV NO_NESTED_FINALIZATION
+RV NO_UNCHECKED_CONVERSION
 RV NO_DEFAULT_INITIALIZATION
 RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U test%b		test.adb		613872ca NE OO SU IL
+U test%b		test.adb		a32334a2 OO SU IL
 W ada%s			ada.ads			ada.ali
-W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
-W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
-Z ada.text_io.enumeration_aux%s  a-tienau.adb	a-tienau.ali
-W ada.text_io.enumeration_io%s
-W interfaces%s		interfac.ads		interfac.ali
-W system%s		system.ads		system.ali
-W system.img_enum_new%s	s-imenne.adb		s-imenne.ali
-W system.val_enum%s	s-valenu.adb		s-valenu.ali
+W ada.unchecked_conversion%s
+W direct_io%s
+W memorymanagement%s	memorymanagement.adb	memorymanagement.ali
 
 D ada.ads		20160516092928 3ffc8e18 ada%s
-D a-except.ads		20160516092928 291912d5 ada.exceptions%s
+D a-charac.ads		20160516092930 2d3ec45b ada.characters%s
+D a-chlat1.ads		20160516092930 66457d31 ada.characters.latin_1%s
+D a-direio.ads		20160516092928 5842da07 ada.direct_io%s
+D a-finali.ads		20160516092930 bf4f806b ada.finalization%s
 D a-inteio.ads		20160516092932 f64b89a4 ada.integer_text_io%s
 D a-ioexce.ads		20160516092926 e4a01f64 ada.io_exceptions%s
 D a-stream.ads		20160516092928 119b8fb3 ada.streams%s
-D a-tags.ads		20160516092932 01f5e3ef ada.tags%s
+D a-string.ads		20160516092930 90ac6797 ada.strings%s
+D a-strmap.ads		20160516092930 e8bb714a ada.strings.maps%s
+D a-strunb.ads		20160516092928 3f91d4c5 ada.strings.unbounded%s
 D a-textio.ads		20160516092932 386df5d4 ada.text_io%s
-D a-tienau.ads		20160516092928 6a9c157b ada.text_io.enumeration_aux%s
-D a-tienio.ads		20160516092928 fc618ae6 ada.text_io.enumeration_io%s
-D a-tienio.adb		20160516092930 c9e6b5af ada.text_io.enumeration_io%b
 D a-tiinio.ads		20160516092928 aa04e5d6 ada.text_io.integer_io%s
 D a-unccon.ads		20160516092930 f9eb8f06 ada.unchecked_conversion%s
+D directio.ads		20160516092928 fc913ad7 direct_io%s
 D interfac.ads		20160516092928 5ab55268 interfaces%s
 D i-cstrea.ads		20160516092926 e53d8b8e interfaces.c_streams%s
+D memorymanagement.ads	20170417023358 e5e395b1 memorymanagement%s
 D system.ads		20160516092930 2da59038 system%s
+D s-atocou.ads		20160516092932 b45c2d8d system.atomic_counters%s
 D s-crtl.ads		20160516092926 0ebbdb71 system.crtl%s
-D s-exctab.ads		20160516092930 54135002 system.exception_table%s
+D s-direio.ads		20160516092926 7c86ede3 system.direct_io%s
 D s-ficobl.ads		20160516092932 078245e4 system.file_control_block%s
-D s-imenne.ads		20160516092928 614c06c0 system.img_enum_new%s
+D s-finroo.ads		20160516092930 4ff27390 system.finalization_root%s
 D s-parame.ads		20160516092932 7e2a0d7f system.parameters%s
-D s-soflin.ads		20160516092928 14e1eb6c system.soft_links%s
-D s-stache.ads		20160516092932 a37c21ec system.stack_checking%s
-D s-stalib.ads		20160516092930 09bd3940 system.standard_library%s
 D s-stoele.ads		20160516092932 2dc34a04 system.storage_elements%s
-D s-traent.ads		20160516092928 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20160516092930 34867c83 system.unsigned_types%s
-D s-valenu.ads		20160516092930 bb1a4295 system.val_enum%s
 D s-wchcon.ads		20160516092930 1b7d22d2 system.wch_con%s
-D test.adb		20170412043612 af1e0eba test%b
+D test.adb		20170417025432 b20dbc77 test%b
 X 1 ada.ads
-16K9*Ada 19e8 29|1r6 1r23 2r6 2r31 8r27
-X 3 a-inteio.ads
-18K13*Integer_Text_IO[11|46] 29|2w10 2r35
-X 7 a-textio.ads
-49K13*Text_IO 471e16 29|1w10 1r27 8r31
-52P9*File_Type 29|11r20
-166U14*New_Line 29|15s15
-X 9 a-tienio.ads
-26k21*Enumeration_IO 55e31 29|8r39
-X 11 a-tiinio.ads
-66U14*Put 29|15s7[3|18]
+16K9*Ada 19e8 29|2r6 2r34 3r6 3r31 4r6 6r6 6r33 13r29 14r28 15r29 16r28 17r24
+X 6 a-inteio.ads
+18K13*Integer_Text_IO[13|46] 29|3w10 3r35
+X 9 a-string.ads
+16K13*Strings 35e16 29|6r10 6r37 17r28
+X 11 a-strunb.ads
+76K21*Unbounded 489e26 29|6w18 6r45 17r36
+79R9*Unbounded_String<5|43R9> 473e14 29|9r47 18r15 26r19 30r56
+94V13*To_Unbounded_String{79R9} 29|20s44
+100V13*To_String{string} 29|33s73
+X 12 a-textio.ads
+49K13*Text_IO 471e16 29|2w10 2r38
+52P9*File_Type 29|19r11
+166U14*New_Line 29|33s146
+242U14*Put 29|33s7 33s69 33s91 33s137
+X 13 a-tiinio.ads
+66U14*Put 29|40s4[6|18]
+X 14 a-unccon.ads
+20v14*Unchecked_Conversion 29|4w10 13r33 14r32 15r33 16r32
+X 15 directio.ads
+24k17*Direct_IO 29|2w19
+X 18 memorymanagement.ads
+13k9*memoryManagement 22e21 29|5w6
 X 29 test.adb
-4U11*test 4b11 70l5 70t9
-5E9 stackElement 5e159 6r51 8r54
-5n26 Blank{5E9}
-5n33 Burris{5E9}
-5n41 Zhou{5E9}
-5n47 Shashidhar{5E9}
-5n59 Shannon{5E9}
-5n68 Yang{5E9}
-5n74 Smith{5E9}
-5n81 Wei{5E9}
-5n86 Rabieh{5E9}
-5n94 Song{5E9}
-5n100 Cho{5E9}
-5n105 Varol{5E9}
-5n112 Karabiyik{5E9}
-5n123 Cooper{5E9}
-5n131 McGuire{5E9}
-5n140 Hope{5E9}
-5n146 Pray{5E9}
-5n152 NoHope{5E9}
-6A9 StackSpace(5E9)<integer>
-7A9 growthSpace(integer)<integer>
-8K12 stackIO[9|26] 9r8
-11p4 input{7|52P9}
-11p11 output{7|52P9}
-12i4 upper{integer}
-12i11 lower{integer}
-12i18 N{integer}
-14i8 L{integer} 15r11
+7U11*test 7b11 55l5 55t9
+9A6 StackSpace(11|79R9)<integer> 20r12 30r34
+10A9 growthSpace(integer)<integer> 21r16 22r17 23r22
+11A12 slice{string}<integer> 13r54 14r53
+12M9 Unsigned_64 14r60 16r53
+13V13 str2Long[14|20]{long_integer}
+14V13 str2Uns[14|20]{12M9}
+15V13 long2Int[14|20]{integer}
+16V13 uns2Int[14|20]{integer}
+17K12 ASU=17:36 18r11
+18r4 test{11|79R9}
+19p4 file{12|52P9}
+20a4 stack{9A6}
+21a10 top{10A9}
+22a10 base{10A9}
+23a10 stackInfo{10A9}
+24e10 operation{character}
+25i10 stackNum{integer}
+26r10 inName{11|79R9}
+27X10 Input_Error
+28b10 inserted{boolean}
+30V13 push{boolean} 30b13 30=19 30>46 37l8 37t12
+30a19 stack{9A6} 34m10
+30r46 item{11|79R9} 33r83 34r22
+38a4 str{string}
 

@@ -4,23 +4,22 @@ A -g
 P SS ZX
 
 RN
-RV NO_DIRECT_BOOLEAN_OPERATORS
-RV NO_ENUMERATION_MAPS
 RV NO_EXCEPTION_HANDLERS
 RV NO_EXCEPTION_PROPAGATION
 RV NO_EXCEPTIONS
-RV NO_FLOATING_POINT
 RV NO_IO
 RV NO_IMPLICIT_CONDITIONALS
+RV NO_LONG_LONG_INTEGERS
 RV NO_NESTED_FINALIZATION
 RV NO_SECONDARY_STACK
 RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_CONVERSION
 RV NO_DEFAULT_INITIALIZATION
 RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_IMPLICIT_LOOPS
 RV SPARK_05
 
-U main%b		main.adb		abb9f080 NE OO SU IL
+U test%b		test.adb		cf2d2746 NE OO SU IL
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
@@ -28,28 +27,24 @@ W ada.strings%s		a-string.ads		a-string.ali
 W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
 W ada.tags%s		a-tags.adb		a-tags.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
-Z ada.text_io.enumeration_aux%s  a-tienau.adb	a-tienau.ali
-W ada.text_io.enumeration_io%s
-W interfaces%s		interfac.ads		interfac.ali
+W ada.unchecked_conversion%s
+W direct_io%s
 W memorymanagement%s	memorymanagement.adb	memorymanagement.ali
 W system%s		system.ads		system.ali
 W system.concat_2%s	s-conca2.adb		s-conca2.ali
 W system.concat_3%s	s-conca3.adb		s-conca3.ali
 W system.exception_table%s  s-exctab.adb	s-exctab.ali
-W system.fat_flt%s	s-fatflt.ads		s-fatflt.ali
 W system.finalization_masters%s  s-finmas.adb	s-finmas.ali
-W system.img_enum_new%s	s-imenne.adb		s-imenne.ali
 W system.img_int%s	s-imgint.adb		s-imgint.ali
 W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 W system.soft_links%s	s-soflin.adb		s-soflin.ali
 W system.standard_library%s  s-stalib.adb	s-stalib.ali
 W system.storage_elements%s  s-stoele.adb	s-stoele.ali
-W system.val_enum%s	s-valenu.adb		s-valenu.ali
-W system.val_int%s	s-valint.adb		s-valint.ali
 
 D ada.ads		20160516092928 3ffc8e18 ada%s
 D a-charac.ads		20160516092930 2d3ec45b ada.characters%s
 D a-chlat1.ads		20160516092930 66457d31 ada.characters.latin_1%s
+D a-direio.ads		20160516092928 5842da07 ada.direct_io%s
 D a-except.ads		20160516092928 291912d5 ada.exceptions%s
 D a-finali.ads		20160516092930 bf4f806b ada.finalization%s
 D a-inteio.ads		20160516092932 f64b89a4 ada.integer_text_io%s
@@ -60,28 +55,22 @@ D a-strmap.ads		20160516092930 e8bb714a ada.strings.maps%s
 D a-strunb.ads		20160516092928 3f91d4c5 ada.strings.unbounded%s
 D a-tags.ads		20160516092932 01f5e3ef ada.tags%s
 D a-textio.ads		20160516092932 386df5d4 ada.text_io%s
-D a-tienau.ads		20160516092928 6a9c157b ada.text_io.enumeration_aux%s
-D a-tienio.ads		20160516092928 fc618ae6 ada.text_io.enumeration_io%s
-D a-tienio.adb		20160516092930 c9e6b5af ada.text_io.enumeration_io%b
 D a-tiinio.ads		20160516092928 aa04e5d6 ada.text_io.integer_io%s
 D a-unccon.ads		20160516092930 f9eb8f06 ada.unchecked_conversion%s
+D directio.ads		20160516092928 fc913ad7 direct_io%s
 D interfac.ads		20160516092928 5ab55268 interfaces%s
 D i-cstrea.ads		20160516092926 e53d8b8e interfaces.c_streams%s
-D main.adb		20170417031832 bfedcd84 main%b
-D memorymanagement.ads	20170417023358 e5e395b1 memorymanagement%s
-D memorymanagement.adb	20170417023342 1d124f71 memorymanagement%b
+D memorymanagement.ads	20170417004330 29f2c408 memorymanagement%s
 D system.ads		20160516092930 2da59038 system%s
 D s-atocou.ads		20160516092932 b45c2d8d system.atomic_counters%s
 D s-conca2.ads		20160516092930 02a0d7d0 system.concat_2%s
 D s-conca3.ads		20160516092932 0b705ca5 system.concat_3%s
 D s-crtl.ads		20160516092926 0ebbdb71 system.crtl%s
+D s-direio.ads		20160516092926 7c86ede3 system.direct_io%s
 D s-exctab.ads		20160516092930 54135002 system.exception_table%s
-D s-fatflt.ads		20160516092930 11beb392 system.fat_flt%s
-D s-fatgen.ads		20160516092932 49cbaf86 system.fat_gen%s
 D s-ficobl.ads		20160516092932 078245e4 system.file_control_block%s
 D s-finmas.ads		20160516092930 7811a767 system.finalization_masters%s
 D s-finroo.ads		20160516092930 4ff27390 system.finalization_root%s
-D s-imenne.ads		20160516092928 614c06c0 system.img_enum_new%s
 D s-imgint.ads		20160516092928 02dbe0c2 system.img_int%s
 D s-memory.ads		20160516092930 597d6634 system.memory%s
 D s-parame.ads		20160516092932 7e2a0d7f system.parameters%s
@@ -96,81 +85,67 @@ D s-stposu.ads		20160516092926 97a6219c system.storage_pools.subpools%s
 D s-stratt.ads		20160516092926 aedef97e system.stream_attributes%s
 D s-traent.ads		20160516092928 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20160516092930 34867c83 system.unsigned_types%s
-D s-valenu.ads		20160516092930 bb1a4295 system.val_enum%s
-D s-valint.ads		20160516092930 48a52a3f system.val_int%s
 D s-wchcon.ads		20160516092930 1b7d22d2 system.wch_con%s
+D test.adb		20170417005940 1212fe2a test%b
 X 1 ada.ads
-16K9*Ada 19e8 21|6r6 6r33 7r6 7r19 7r44 7r57 20r27
-X 6 a-inteio.ads
-18K13*Integer_Text_IO[17|46] 21|7w23 7r61
-X 9 a-string.ads
-16K13*Strings 35e16 21|6r10 6r37
-X 11 a-strunb.ads
-76K21*Unbounded 489e26 21|6w18 6r45
-79R9*Unbounded_String<5|43R9> 473e14 21|46r14 69r23 74r46 79r42
-94V13*To_Unbounded_String{79R9} 21|50s15 51s15 76s12
-100V13*To_String{string} 21|71s11
-148V13*Slice{string} 21|53s13 59s34 62s30 65s31
-X 13 a-textio.ads
-49K13*Text_IO 471e16 21|7w10 7r48 20r31
-52P9*File_Type 21|45r27 74r27
-73I12*Field{integer}
-242U14*Put 21|35s10 71s7
-253V13*Get_Line{string} 21|50s35 51s35 76s32
-X 15 a-tienio.ads
-26k21*Enumeration_IO 55e31 21|20r39
-40U14 Put 21|37s10[20] 60s7[20]
-X 17 a-tiinio.ads
-66U14*Put 21|38s10[6|18] 39s10[6|18] 56s10[6|18] 63s7[6|18] 66s7[6|18]
-68i7 Width{13|73I12} 21|38r21[6|18] 39r22[6|18] 56r17[6|18]
-X 21 main.adb
-10U11*main 10b11 84l5 84t9
-11E9 MonthName 11e120 13r25 20r54 59r18
-11n23 January{11E9} 18r21
-11n32 February{11E9}
-11n42 March{11E9}
-11n49 April{11E9}
-11n56 May{11E9}
-11n61 June{11E9}
-11n67 July{11E9}
-11n73 August{11E9}
-11n81 September{11E9}
-11n92 October{11E9}
-11n101 November{11E9}
-11n111 December{11E9}
-12R9 Data 16e14 18r12 23r25 32r23 45r46 80r42
-13e12 Month{11E9} 25r12 25r22 37r16 59m9 60r13
-14i12 Day{integer} 25r34 25r42 38r16 62m9 63r13
-15i12 Year{integer} 25r52 25r61 39r16 65m9 66r13
-18r4 Empty{12R9} 34r14 83r35
-20K12 MonthIO[15|26] 21r8
-23V14 "="{boolean} 23b14 23>18 23>21 30l9 30t11 34s12
-23r18 X{12R9} 25r10 25r32 25r50
-23r21 Y{12R9} 25r20 25r40 25r59
-32U14 aPut 32b14 32>19 41t7 80r48
-32r19 X{12R9} 34r10 37r14 38r14 39r14
-45U14 aGet 45b14 45>19 45<38 67t7 80r54
-45p19 input{13|52P9} 50r44 51r44
-45r38 X{12R9} 59m7 60r11 62m7 63r11 65m7 66r11
-46r7 line{11|79R9} 50m7 51m7 53r19 59r40 62r36 65r37
-47i7 i{integer} 53r28 53r33 55m10 55r15 56r14 59r49 61m7 61r12 62r42 62r45
-. 64m7 64r12 65r43 65r46
-69U14 bPut 69b14 69>19 72t7 79r60
-69r19 X{11|79R9} 71r21
-74U14 bGet 74b14 74>19 74<38 77t7 79r66
-74p19 input{13|52P9} 76r41
-74r38 X{11|79R9} 76m7
-79K12 B_Mem[22|13]
-80K12 A_Mem[22|13] 83r4
-X 22 memorymanagement.ads
-13k9*memoryManagement 21|8w6 79r25 80r25 22|22e21
-18U14 makeStack 21|83s10[80]
-X 24 system.ads
+16K9*Ada 19e8 46|2r6 2r34 3r6 3r31 4r6 6r6 6r33 13r29 14r28 15r29 16r28 17r24
+. 43r39
+X 7 a-inteio.ads
+18K13*Integer_Text_IO[15|46] 46|3w10 3r35
+X 10 a-string.ads
+16K13*Strings 35e16 46|6r10 6r37 17r28
+X 12 a-strunb.ads
+76K21*Unbounded 489e26 46|6w18 6r45 17r36
+79R9*Unbounded_String<6|43R9> 473e14 46|9r47 18r15 26r19 29r56
+94V13*To_Unbounded_String{79R9} 46|20s44 43s19
+100V13*To_String{string} 46|32s73 44s15
+X 14 a-textio.ads
+49K13*Text_IO 471e16 46|2w10 2r38 43r43
+52P9*File_Type 46|19r11
+53n23*In_File{53E9} 46|39r15
+92U14*Open 46|39s4
+166U14*New_Line 46|32s146 44s32
+242U14*Put 46|32s7 32s69 32s91 32s137 41s4 44s7
+253V13*Get_Line{string} 46|40s11 43s51
+X 16 a-unccon.ads
+20v14*Unchecked_Conversion 46|4w10 13r33 14r32 15r33 16r32
+X 17 directio.ads
+24k17*Direct_IO 46|2w19
+X 20 memorymanagement.ads
+12K9*memoryManagement 21e21 46|5w6
+X 21 system.ads
 67M9*Address
-X 37 s-memory.ads
-53V13*Alloc{24|67M9} 103i<c,__gnat_malloc>22
+X 32 s-memory.ads
+53V13*Alloc{21|67M9} 103i<c,__gnat_malloc>22
 68U14*Free 104i<c,__gnat_free>22
-76V13*Realloc{24|67M9} 105i<c,__gnat_realloc>22
-X 43 s-stalib.adb
+76V13*Realloc{21|67M9} 105i<c,__gnat_realloc>22
+X 38 s-stalib.adb
 93U14 Break_Start 94i<c,__gnat_break_start>22
+X 46 test.adb
+7U11*test 7b11 62l5 62t9
+9A6 StackSpace(12|79R9)<integer> 20r12 29r34
+10A9 growthSpace(integer)<integer> 21r16 22r17 23r22
+11A12 slice{string}<integer> 13r54 14r53
+12M9 Unsigned_64 14r60 16r53
+13V13 str2Long[16|20]{long_integer}
+14V13 str2Uns[16|20]{12M9}
+15V13 long2Int[16|20]{integer}
+16V13 uns2Int[16|20]{integer}
+17K12 ASU=17:36 18r11 43r15 44r11
+18r4 test{12|79R9} 43m7 44r25 47r28
+19p4 file{14|52P9} 39m9 39r9 40r20 43r60
+20a4 stack{9A6} 47m22 47r22
+21a10 top{10A9}
+22a10 base{10A9}
+23a10 stackInfo{10A9}
+24e10 operation{character}
+25i10 stackNum{integer}
+26r10 inName{12|79R9}
+27X10 Input_Error
+28b10 inserted{boolean} 47m4
+29V13 push{boolean} 29b13 29=19 29>46 36l8 36t12 47s16
+29a19 stack{9A6} 33m10
+29r46 item{12|79R9} 32r83 33r22
+37a4 str{string} 40m4 41r8
+42i8 i{integer}
 

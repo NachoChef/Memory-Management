@@ -16,19 +16,19 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_OBSOLESCENT_FEATURES
 RV SPARK_05
 
-U ada_main%b		b~test.adb		154d3b4a NE OO PK IL
+U ada_main%b		b~test.adb		24446d53 NE OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W system%s		system.ads		system.ali
 
-U ada_main%s		b~test.ads		a2746a1c EE NE OO PK IL
+U ada_main%s		b~test.ads		937d3c05 EE NE OO PK IL
 W system%s		system.ads		system.ali
 
 D ada.ads		20160516092928 3ffc8e18 ada%s
 D a-except.ads		20160516092928 291912d5 ada.exceptions%s
 D a-unccon.ads		20160516092930 f9eb8f06 ada.unchecked_conversion%s
-D b~test.ads		20170417025434 8fd1fa24 ada_main%s
-D b~test.adb		20170417025434 b385d3bb ada_main%b
+D b~test.ads		20170417005942 bed8ac3d ada_main%s
+D b~test.adb		20170417005942 b385d3bb ada_main%b
 D system.ads		20160516092930 2da59038 system%s
 D s-parame.ads		20160516092932 7e2a0d7f system.parameters%s
 D s-stalib.ads		20160516092930 09bd3940 system.standard_library%s
@@ -38,7 +38,7 @@ X 1 ada.ads
 X 2 a-except.ads
 54K13*Exceptions 349e19 5|6w10
 X 4 b~test.ads
-4K9*ada_main 504l5 504e13 5|8b14 267l5 267t13
+4K9*ada_main 507l5 507e13 5|8b14 267l5 267t13
 6i4*gnat_argc{integer} 10m22 10r22 5|244m7
 7m4*gnat_argv{6|67M9} 11m22 11r22 5|245m7
 8m4*gnat_envp{6|67M9} 12m22 12r22 5|246m7
@@ -64,7 +64,7 @@ X 4 b~test.ads
 . 260r22 262r22 264r22 266r22 268r22 270r22 272r22 274r22 276r22 278r22 280r22
 . 282r22 284r22 286r22 288r22 290r22 292r22 294r22 296r22 298r22 300r22 302r22
 . 304r22 306r22 308r22 310r22 312r22 314r22 316r22 318r22 320r22 322r22 324r22
-. 326r22 328r22 330r22 332r22 334r22 336r22 338r22 340r22 342r22 344r22
+. 326r22 328r22 330r22 332r22 334r22 336r22 338r22 340r22 342r22 344r22 346r22
 38m4*u00001{37M9} 39r22
 40m4*u00002{37M9} 41r22
 42m4*u00003{37M9} 43r22
@@ -219,6 +219,7 @@ X 4 b~test.ads
 340m4*u00152{37M9} 341r22
 342m4*u00153{37M9} 343r22
 344m4*u00154{37M9} 345r22
+346m4*u00155{37M9} 347r22
 X 5 b~test.adb
 10i4 E104{short_integer} 10m46 10r46 209m7 209r15
 11i4 E011{short_integer} 11m46 11r46 207m7 207r15

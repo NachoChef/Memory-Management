@@ -35,7 +35,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#613872ca#;
+   u00001 : constant Version_32 := 16#a32334a2#;
    pragma Export (C, u00001, "testB");
    u00002 : constant Version_32 := 16#b6df930e#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -281,22 +281,68 @@ package ada_main is
    pragma Export (C, u00122, "system__val_intB");
    u00123 : constant Version_32 := 16#6500ba07#;
    pragma Export (C, u00123, "system__val_intS");
-   u00124 : constant Version_32 := 16#f08789ae#;
-   pragma Export (C, u00124, "ada__text_io__enumeration_auxB");
-   u00125 : constant Version_32 := 16#52f1e0af#;
-   pragma Export (C, u00125, "ada__text_io__enumeration_auxS");
-   u00126 : constant Version_32 := 16#d0432c8d#;
-   pragma Export (C, u00126, "system__img_enum_newB");
-   u00127 : constant Version_32 := 16#4ce996f8#;
-   pragma Export (C, u00127, "system__img_enum_newS");
-   u00128 : constant Version_32 := 16#4b37b589#;
-   pragma Export (C, u00128, "system__val_enumB");
-   u00129 : constant Version_32 := 16#96bfd2ad#;
-   pragma Export (C, u00129, "system__val_enumS");
-   u00130 : constant Version_32 := 16#ee101ba4#;
-   pragma Export (C, u00130, "system__memoryB");
-   u00131 : constant Version_32 := 16#74d8f60c#;
-   pragma Export (C, u00131, "system__memoryS");
+   u00124 : constant Version_32 := 16#5130abd7#;
+   pragma Export (C, u00124, "ada__strings__unboundedB");
+   u00125 : constant Version_32 := 16#4c956ffe#;
+   pragma Export (C, u00125, "ada__strings__unboundedS");
+   u00126 : constant Version_32 := 16#0b4a75ae#;
+   pragma Export (C, u00126, "ada__strings__searchB");
+   u00127 : constant Version_32 := 16#c1ab8667#;
+   pragma Export (C, u00127, "ada__strings__searchS");
+   u00128 : constant Version_32 := 16#5b9edcc4#;
+   pragma Export (C, u00128, "system__compare_array_unsigned_8B");
+   u00129 : constant Version_32 := 16#84a6e1b5#;
+   pragma Export (C, u00129, "system__compare_array_unsigned_8S");
+   u00130 : constant Version_32 := 16#5f72f755#;
+   pragma Export (C, u00130, "system__address_operationsB");
+   u00131 : constant Version_32 := 16#3ea92e0b#;
+   pragma Export (C, u00131, "system__address_operationsS");
+   u00132 : constant Version_32 := 16#6a86c9a5#;
+   pragma Export (C, u00132, "system__storage_pools__subpoolsB");
+   u00133 : constant Version_32 := 16#cc5a1856#;
+   pragma Export (C, u00133, "system__storage_pools__subpoolsS");
+   u00134 : constant Version_32 := 16#6abe5dbe#;
+   pragma Export (C, u00134, "system__finalization_mastersB");
+   u00135 : constant Version_32 := 16#7659a9f2#;
+   pragma Export (C, u00135, "system__finalization_mastersS");
+   u00136 : constant Version_32 := 16#7268f812#;
+   pragma Export (C, u00136, "system__img_boolB");
+   u00137 : constant Version_32 := 16#d87ce1d3#;
+   pragma Export (C, u00137, "system__img_boolS");
+   u00138 : constant Version_32 := 16#6d4d969a#;
+   pragma Export (C, u00138, "system__storage_poolsB");
+   u00139 : constant Version_32 := 16#0e480e95#;
+   pragma Export (C, u00139, "system__storage_poolsS");
+   u00140 : constant Version_32 := 16#9aad1ff1#;
+   pragma Export (C, u00140, "system__storage_pools__subpools__finalizationB");
+   u00141 : constant Version_32 := 16#fe2f4b3a#;
+   pragma Export (C, u00141, "system__storage_pools__subpools__finalizationS");
+   u00142 : constant Version_32 := 16#12218162#;
+   pragma Export (C, u00142, "system__atomic_countersB");
+   u00143 : constant Version_32 := 16#99f9bdb5#;
+   pragma Export (C, u00143, "system__atomic_countersS");
+   u00144 : constant Version_32 := 16#221eebf6#;
+   pragma Export (C, u00144, "system__machine_codeS");
+   u00145 : constant Version_32 := 16#f4e1c091#;
+   pragma Export (C, u00145, "system__stream_attributesB");
+   u00146 : constant Version_32 := 16#8bc30a4e#;
+   pragma Export (C, u00146, "system__stream_attributesS");
+   u00147 : constant Version_32 := 16#f8f1dac0#;
+   pragma Export (C, u00147, "memorymanagementB");
+   u00148 : constant Version_32 := 16#14543d04#;
+   pragma Export (C, u00148, "memorymanagementS");
+   u00149 : constant Version_32 := 16#fd83e873#;
+   pragma Export (C, u00149, "system__concat_2B");
+   u00150 : constant Version_32 := 16#2f0547e8#;
+   pragma Export (C, u00150, "system__concat_2S");
+   u00151 : constant Version_32 := 16#2b70b149#;
+   pragma Export (C, u00151, "system__concat_3B");
+   u00152 : constant Version_32 := 16#26d5cc9d#;
+   pragma Export (C, u00152, "system__concat_3S");
+   u00153 : constant Version_32 := 16#ee101ba4#;
+   pragma Export (C, u00153, "system__memoryB");
+   u00154 : constant Version_32 := 16#74d8f60c#;
+   pragma Export (C, u00154, "system__memoryS");
    --  BEGIN ELABORATION ORDER
    --  ada%s
    --  ada.characters%s
@@ -304,17 +350,22 @@ package ada_main is
    --  ada.characters.latin_1%s
    --  interfaces%s
    --  system%s
+   --  system.address_operations%s
+   --  system.address_operations%b
+   --  system.atomic_counters%s
    --  system.case_util%s
    --  system.case_util%b
    --  system.htable%s
-   --  system.img_enum_new%s
-   --  system.img_enum_new%b
+   --  system.img_bool%s
+   --  system.img_bool%b
    --  system.img_int%s
    --  system.img_int%b
    --  system.img_lli%s
    --  system.img_lli%b
    --  system.io%s
    --  system.io%b
+   --  system.machine_code%s
+   --  system.atomic_counters%b
    --  system.parameters%s
    --  system.parameters%b
    --  system.crtl%s
@@ -348,7 +399,6 @@ package ada_main is
    --  system.img_uns%b
    --  system.img_wiu%s
    --  system.img_wiu%b
-   --  system.val_enum%s
    --  system.val_int%s
    --  system.val_lli%s
    --  system.val_llu%s
@@ -359,7 +409,6 @@ package ada_main is
    --  system.val_llu%b
    --  system.val_lli%b
    --  system.val_int%b
-   --  system.val_enum%b
    --  system.wch_con%s
    --  system.wch_con%b
    --  system.wch_cnv%s
@@ -374,12 +423,20 @@ package ada_main is
    --  system.address_image%s
    --  system.bit_ops%s
    --  system.bit_ops%b
+   --  system.compare_array_unsigned_8%s
+   --  system.compare_array_unsigned_8%b
+   --  system.concat_2%s
+   --  system.concat_2%b
+   --  system.concat_3%s
+   --  system.concat_3%b
    --  system.exception_table%s
    --  system.exception_table%b
    --  ada.io_exceptions%s
    --  ada.strings%s
    --  ada.strings.maps%s
    --  ada.strings.maps.constants%s
+   --  ada.strings.search%s
+   --  ada.strings.search%b
    --  ada.tags%s
    --  ada.streams%s
    --  ada.streams%b
@@ -392,6 +449,14 @@ package ada_main is
    --  system.finalization_root%s
    --  system.finalization_root%b
    --  ada.finalization%s
+   --  system.storage_pools%s
+   --  system.storage_pools%b
+   --  system.finalization_masters%s
+   --  system.storage_pools.subpools%s
+   --  system.storage_pools.subpools.finalization%s
+   --  system.storage_pools.subpools.finalization%b
+   --  system.stream_attributes%s
+   --  system.stream_attributes%b
    --  system.win32%s
    --  system.exception_traces%s
    --  system.exception_traces%b
@@ -401,6 +466,8 @@ package ada_main is
    --  system.object_reader%s
    --  system.dwarf_lines%s
    --  system.secondary_stack%s
+   --  system.storage_pools.subpools%b
+   --  system.finalization_masters%b
    --  system.file_io%b
    --  interfaces.c%b
    --  ada.tags%b
@@ -413,6 +480,8 @@ package ada_main is
    --  system.object_reader%b
    --  system.address_image%b
    --  ada.exceptions.traceback%b
+   --  ada.strings.unbounded%s
+   --  ada.strings.unbounded%b
    --  system.traceback%s
    --  system.traceback%b
    --  system.traceback.symbolic%s
@@ -420,14 +489,14 @@ package ada_main is
    --  ada.exceptions%b
    --  ada.text_io%s
    --  ada.text_io%b
-   --  ada.text_io.enumeration_aux%s
    --  ada.text_io.generic_aux%s
    --  ada.text_io.generic_aux%b
-   --  ada.text_io.enumeration_aux%b
    --  ada.text_io.integer_aux%s
    --  ada.text_io.integer_aux%b
    --  ada.integer_text_io%s
    --  ada.integer_text_io%b
+   --  memorymanagement%s
+   --  memorymanagement%b
    --  test%b
    --  END ELABORATION ORDER
 

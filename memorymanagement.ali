@@ -1,208 +1,185 @@
 V "GNAT Lib v2016"
 A -g
-P ZX
+P SS ZX
 
 RN
 RV NO_EXCEPTIONS
 RV NO_FLOATING_POINT
 RV NO_IO
-RV NO_IMPLICIT_CONDITIONALS
-RV NO_STANDARD_STORAGE_POOLS
 RV NO_DEFAULT_INITIALIZATION
 RV NO_DYNAMIC_SIZED_OBJECTS
 RV SPARK_05
 
-U memorymanagement%b	memorymanagement.adb	f5463261 NE OO PK IL
-W ada.exceptions%s	a-except.adb		a-except.ali
-W ada.tags%s		a-tags.adb		a-tags.ali
-W system%s		system.ads		system.ali
-W system.concat_2%s	s-conca2.adb		s-conca2.ali
-W system.concat_3%s	s-conca3.adb		s-conca3.ali
-W system.concat_4%s	s-conca4.adb		s-conca4.ali
-W system.exception_table%s  s-exctab.adb	s-exctab.ali
-W system.fat_flt%s	s-fatflt.ads		s-fatflt.ali
-W system.img_int%s	s-imgint.adb		s-imgint.ali
-W system.standard_library%s  s-stalib.adb	s-stalib.ali
+U memorymanagement%b	memorymanagement.adb	f8f1dac0 NE OO PK GE IL
 
-U memorymanagement%s	memorymanagement.ads	e4103650 EE NE OO PK IL
+U memorymanagement%s	memorymanagement.ads	14543d04 BN EE NE OO PK GE IL
 W ada%s			ada.ads			ada.ali
-W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
-W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
-Z ada.text_io.enumeration_aux%s  a-tienau.adb	a-tienau.ali
-W ada.text_io.enumeration_io%s
-W interfaces%s		interfac.ads		interfac.ali
-W system%s		system.ads		system.ali
-W system.img_enum_new%s	s-imenne.adb		s-imenne.ali
-W system.val_enum%s	s-valenu.adb		s-valenu.ali
 
 D ada.ads		20160516092928 3ffc8e18 ada%s
+D a-charac.ads		20160516092930 2d3ec45b ada.characters%s
+D a-chlat1.ads		20160516092930 66457d31 ada.characters.latin_1%s
 D a-except.ads		20160516092928 291912d5 ada.exceptions%s
+D a-finali.ads		20160516092930 bf4f806b ada.finalization%s
 D a-inteio.ads		20160516092932 f64b89a4 ada.integer_text_io%s
 D a-ioexce.ads		20160516092926 e4a01f64 ada.io_exceptions%s
 D a-stream.ads		20160516092928 119b8fb3 ada.streams%s
+D a-string.ads		20160516092930 90ac6797 ada.strings%s
+D a-strmap.ads		20160516092930 e8bb714a ada.strings.maps%s
+D a-strunb.ads		20160516092928 3f91d4c5 ada.strings.unbounded%s
 D a-tags.ads		20160516092932 01f5e3ef ada.tags%s
 D a-textio.ads		20160516092932 386df5d4 ada.text_io%s
-D a-tienau.ads		20160516092928 6a9c157b ada.text_io.enumeration_aux%s
-D a-tienio.ads		20160516092928 fc618ae6 ada.text_io.enumeration_io%s
-D a-tienio.adb		20160516092930 c9e6b5af ada.text_io.enumeration_io%b
 D a-tiinio.ads		20160516092928 aa04e5d6 ada.text_io.integer_io%s
 D a-unccon.ads		20160516092930 f9eb8f06 ada.unchecked_conversion%s
 D interfac.ads		20160516092928 5ab55268 interfaces%s
 D i-cstrea.ads		20160516092926 e53d8b8e interfaces.c_streams%s
-D memorymanagement.ads	20170412230432 2a364a20 memorymanagement%s
-D memorymanagement.adb	20170412233220 df707841 memorymanagement%b
+D memorymanagement.ads	20170417023358 e5e395b1 memorymanagement%s
+D memorymanagement.adb	20170417023342 1d124f71 memorymanagement%b
 D system.ads		20160516092930 2da59038 system%s
-D s-conca2.ads		20160516092930 02a0d7d0 system.concat_2%s
-D s-conca3.ads		20160516092932 0b705ca5 system.concat_3%s
-D s-conca4.ads		20160516092930 7e642b20 system.concat_4%s
+D s-atocou.ads		20160516092932 b45c2d8d system.atomic_counters%s
 D s-crtl.ads		20160516092926 0ebbdb71 system.crtl%s
 D s-exctab.ads		20160516092930 54135002 system.exception_table%s
-D s-fatflt.ads		20160516092930 11beb392 system.fat_flt%s
-D s-fatgen.ads		20160516092932 49cbaf86 system.fat_gen%s
 D s-ficobl.ads		20160516092932 078245e4 system.file_control_block%s
-D s-imenne.ads		20160516092928 614c06c0 system.img_enum_new%s
-D s-imgint.ads		20160516092928 02dbe0c2 system.img_int%s
+D s-finmas.ads		20160516092930 7811a767 system.finalization_masters%s
+D s-finroo.ads		20160516092930 4ff27390 system.finalization_root%s
 D s-parame.ads		20160516092932 7e2a0d7f system.parameters%s
+D s-secsta.ads		20160516092930 86a2856d system.secondary_stack%s
 D s-soflin.ads		20160516092928 14e1eb6c system.soft_links%s
 D s-stache.ads		20160516092932 a37c21ec system.stack_checking%s
 D s-stalib.ads		20160516092930 09bd3940 system.standard_library%s
 D s-stoele.ads		20160516092932 2dc34a04 system.storage_elements%s
+D s-stopoo.ads		20160516092928 b16154c2 system.storage_pools%s
+D s-stposu.ads		20160516092926 97a6219c system.storage_pools.subpools%s
+D s-stratt.ads		20160516092926 aedef97e system.stream_attributes%s
 D s-traent.ads		20160516092928 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20160516092930 34867c83 system.unsigned_types%s
-D s-valenu.ads		20160516092930 bb1a4295 system.val_enum%s
 D s-wchcon.ads		20160516092930 1b7d22d2 system.wch_con%s
 X 1 ada.ads
-16K9*Ada 19e8 15|7r6 7r19 7r44 7r57 18r29
-X 3 a-inteio.ads
-18K13*Integer_Text_IO[11|46] 15|7w23 7r61
-X 7 a-textio.ads
-49K13*Text_IO 471e16 15|7w10 7r48 18r33
-52P9*File_Type 15|17r132 16|4r23 145r132
-53n23*In_File{53E9} 16|7r19
-92U14*Open 16|7s7
-166U14*New_Line 16|10s56 11s28 26s70 100s67 136s66 139s157 150s103
-183V13*End_Of_File{boolean} 16|31s20
-205U14*Get 16|32s13
-242U14*Put 16|11s7 26s13 26s45 100s10 136s10 136s36 139s10 139s90 139s148
-. 150s10
-263U14*Put_Line 16|38s22 61s10 62s10 62s77 64s10 75s10 148s10
-X 9 a-tienio.ads
-26k21*Enumeration_IO 55e31 15|18r41
-31U14*Get 16|35s19[15|18]
-40U14*Put 16|100s50[15|18] 139s79[15|18] 150s74[15|18]
-X 11 a-tiinio.ads
-51U14*Get 16|9s7[3|18] 9s26[3|18] 9s45[3|18] 9s61[3|18] 9s76[3|18] 32s37[3|18]
-66U14*Put 16|10s7[3|18] 10s19[3|18] 10s31[3|18] 10s40[3|18] 10s48[3|18] 11s20[3|18]
-. 26s57[3|18]
-X 15 memorymanagement.ads
-9K9*memoryManagement 19l5 19e21 16|1b14 156l5 156t21
-10E9*stackElement 10e179 11r50 13r181 16r132 18r56 16|19r19 50r181 132r132
-10n26*Deering{10E9}
-10n35*An{10E9}
-10n39*Najar{10E9}
-10n46*Burris{10E9}
-10n54*Zhou{10E9}
-10n60*Shashidhar{10E9}
-10n72*Shannon{10E9}
-10n81*Yang{10E9}
-10n87*Smith{10E9}
-10n94*Wei{10E9}
-10n99*Rabieh{10E9}
-10n107*Song{10E9}
-10n113*Cho{10E9}
-10n118*Varol{10E9}
-10n125*Karabiyik{10E9}
-10n136*Cooper{10E9}
-10n144*McGuire{10E9}
-10n153*Hope{10E9}
-10n159*Pray{10E9}
-10n165*NoHope{10E9}
-10n173*Blank{10E9} 16|13r58 151r34
-11A9*StackSpace(10E9)<integer> 13r41 14r40 16r34 17r34 16|13r18 50r41 105r40
-. 132r34 145r34
-12A9*growthSpace(integer)<integer> 13r66 13r93 13r122 14r65 14r92 14r121
-. 16r59 16r86 17r59 17r86 16|14r16 15r17 16r19 50r66 50r93 50r122 105r65
-. 105r92 105r121 132r59 132r86 145r59 145r86
-13U14*reallocate 13=26 13=53 13=79 13=106 13>135 13>158 13>171 16|39s22 50b14
-. 103l8 103t18
-13a26 stack{11A9} 16|50b26 92m17 94m7 100r55
-13a53 top{12A9} 16|50b53 54r32 54r43 62r68 63r37 65r13 66r28 88r37 91m7 91r17
-. 92m24 93m7 93r17 94r13 96r23
-13a79 base{12A9} 16|50b79 51r31 51r36 51r49 51r54 53r22 62r136 63r46 74r19
-. 85r20 88r48 92m29 95r19 99r16 99r27 99r32
-13a106 oldTop{12A9} 16|50b106 65r22 66m13 66r37 67r36 69m13 75r45 85m7 87r46
-. 88m10 88r23 92m35 96m10
-13f135 EqualAllocate{float} 16|50b135 82r31 83r16
-13i158 K{integer} 16|50b158 91r11 91r21 93r11 93r21 94r17
-13e171 item{10E9} 16|50b171 94r24
-14U14*moveStack 14=25 14=52 14=78 14=105 16|92s7 105b14 130l8 130t17
-14a25 stack{11A9} 16|105b25 113m16 113r35 124m16 124r35
-14a52 top{12A9} 16|105b52 112r33 116m13 116r23 123r41 127m13 127r23
-14a78 base{12A9} 16|105b78 107r22 107r32 110r25 111r23 112r22 115m13 121r25
-. 122r35 123r30 126m13
-14a105 oldTop{12A9} 16|105b105 110r13 111r33 115r24 121r13 122r23 126r24
-15U14*makeStack 15>25 15>42 16|3b14 48l8 48t17
-15a25 inFile{string} 16|3b25 7r28
-15a42 outFile{string} 16|3b42
-16V13*push{boolean} 16=19 16=46 16=72 16>99 16>122 16|36s31 132b13 143l8
-. 143t12
-16a19 stack{11A9} 16|132b19 140m10
-16a46 top{12A9} 16|132b46 134m7 134r24 135r11 139r131 140r16
-16a72 base{12A9} 16|132b72 135r27
-16i99 stackNum{integer} 16|132b99 134r11 134r28 135r15 135r32 136r54 139r53
-. 139r135 140r20
-16e122 item{10E9} 16|132b122 139r83 140r34
-17U14*pop 17=19 17=46 17=72 17>99 17>122 16|42s18 145b14 154l8 154t11
-17a19 stack{11A9} 16|145b19 150r78 151m10
-17a46 top{12A9} 16|145b46 147r11 150r84 151r16 152m10 152r27
-17a72 base{12A9} 16|145b72 147r27
-17i99 stackNum{integer} 16|145b99 147r15 147r32 150r46 150r88 151r20 152r14
-. 152r31
-17p122 outFile{7|52P9} 16|145b122
-18K12*elementIO[9|26] 18r75
-X 16 memorymanagement.adb
-4p7 input{7|52P9} 7m12 7r12 9r11 9r30 9r49 9r65 9r80 31r32 32r18 32r42 35r24
-4p14 output{7|52P9} 42r51
-5i7 upper{integer} 9m37 10r23 13r37
-5i14 lower{integer} 9m18 10r11 13r30
-5i21 N{integer} 9m87 10r52 11r24 14r32 15r33 16r35 24r22 25r68
-5i24 L0{integer} 9m56 10r35 23r20 25r88
-5i28 M{integer} 9m72 10r44 25r81
-13a10 stack{15|11A9} 36m37 36r37 39m34 39r34 42m23 42r23
-14a10 top{15|12A9} 23m10 25m13 26r61 28r18 29r20 36m44 36r44 39m41 39r41
-. 42m30 42r30
-15a10 base{15|12A9} 28m10 36m49 36r49 39m46 39r46 42m35 42r35
-16a10 oldTop{15|12A9} 29m10 39m52 39r52
-17e10 operation{character} 32m25 33r18
-18i10 stackNum{integer} 32m49 36r55 39r66 42r41
-19e10 inName{15|10E9} 35m31 36r65 39r76
-20X10 Input_Error 44r25
-21b10 inserted{boolean} 36m19 37r27
-24i14 i{integer} 25r17 25r51 26r40 26r65
-51i7 AvailSpace{integer} 63m10 63r24 64r49 78r10 83r39 84r39
-52i7 TotalInc{integer} 67m13 67r25 84r59
-53i7 j{integer} 60r13 61r42 62r41 62r72 62r109 62r141 63r41 63r51 65r17 65r29
-. 66r20 66r32 66r44 67r43 69r20 71m10 71r15
-54i7 N{integer} 83r59 86r19
-55X7 Insufficient_Memory 79r16
-56f7 GrowthAllocate{float} 82m7 84r15
-56f23 Alpha{float} 83m7 87r32
-56f30 Beta{float} 84m7 87r59
-56f36 Tau{float} 87m10 88r80 89r19
-57f7 Sigma{float} 87r23 88r108 89m10
-58i7 MinSpace{integer} 78r24
-74i11 i{integer} 75r52
-86i11 j{integer} 87r53 88r17 88r30 88r41 88r53
-95i11 j{integer} 96r17 96r27
-99i11 j{integer} 100r36 100r61
-106i7 change{integer} 111m13 113r24 116r32 122m13 124r24 127r32
-107i7 N{integer} 109r19 120r19
-109i11 j{integer} 110r20 110r30 111r28 111r40 112r27 112r37 115r18 115r31
-. 116r17 116r27
-112i17 l{integer} 113r22 113r41
-120i11 j{integer} 121r20 121r30 122r30 122r40 123r35 123r45 126r18 126r31
+16K9*Ada 19e8 18|6r6 6r19 6r44 6r57 7r6 7r33
+X 6 a-inteio.ads
+18K13*Integer_Text_IO[14|46] 18|6w23 6r61
+X 9 a-string.ads
+16K13*Strings 35e16 18|7r10 7r37
+X 11 a-strunb.ads
+76K21*Unbounded 489e26 18|7w18 7r45
+X 13 a-textio.ads
+49K13*Text_IO 471e16 18|6w10 6r48
+52P9*File_Type 18|12r34 19|9r15
+53n23*In_File{53E9} 19|12r19
+92U14*Open 19|12s7
+166U14*New_Line 19|18s30 19s56 70s7 74s7 76s7 148s75 151s159 162s103 173s7
+. 181s10 183s7 185s67
+183V13*End_Of_File{boolean} 19|41s20
+187U14*Set_Col 19|14s7 15s7 16s7 17s7 18s7 170s7 171s7 172s7
+205U14*Get 19|42s13
+208U14*Put 19|177s10 179s10
+242U14*Put 19|14s20 15s20 16s20 17s20 18s20 90s10 148s10 148s36 148s65 151s10
+. 151s92 151s150 162s10 170s20 171s20 172s20 175s10 185s10
+263U14*Put_Line 19|71s7 75s7 111s7 160s10
+X 14 a-tiinio.ads
+51U14*Get 19|13s7[6|18] 13s26[6|18] 13s45[6|18] 13s61[6|18] 13s76[6|18] 42s36[6|18]
+66U14*Put 19|19s7[6|18] 19s19[6|18] 19s31[6|18] 19s40[6|18] 19s48[6|18] 176s10[6|18]
+. 178s10[6|18] 180s10[6|18]
+X 18 memorymanagement.ads
+10+10 element 11r30 12r53 14r50 16r184 18r50 19r128 19|8r50 27r19 60r184
+. 144r128
+11U20 myPut 11>26 19|151s79 162s74 185s50
+11*26 X{10+10}
+12U20 myGet 12>26 12<45 19|45s19 46s19
+12p26 input{13|52P9}
+12*45 X{10+10}
+13k9*memoryManagement 10z10 11z20 12z20 22l5 22e21 19|6b14 190l5 190t21
+14A9*StackSpace(10+10)<integer> 16r41 17r40 19r34 20r34 21r33 19|21r18 60r41
+. 115r40 144r34 157r34 168r33
+15A9*growthSpace(integer)<integer> 16r66 16r93 16r125 17r65 17r92 17r124
+. 19r59 19r82 20r59 20r82 21r51 21r71 21r96 19|22r16 23r17 24r22 60r66 60r93
+. 60r125 115r65 115r92 115r124 144r59 144r82 157r59 157r82 168r51 168r71
+. 168r96
+16U14*reallocate 16=26 16=53 16=79 16=106 16>138 16>161 16>174 19|49s22 60b14
+. 113l8 113t18
+16a26 stack{14A9} 19|60b26 72r18 104m17 106m7 112r18
+16a53 top{15A9} 19|60b53 72r25 79r37 80r13 81r31 100r43 103m7 103r17 104m24
+. 105m7 105r17 106r13 108r26 112r25
+16a79 base{15A9} 19|60b79 61r31 61r36 61r49 61r54 63r22 64r32 64r44 72r30
+. 79r46 97r23 100r54 104m29 107r19 112r30
+16a106 stackInfo{15A9} 19|60b106 72r36 80r22 81m13 81r40 82r36 84m13 97m7
+. 99r46 100m10 100r26 104m35 108m10 112r36
+16f138 EqualAllocate{float} 19|60b138 94r31 95r16
+16i161 K{integer} 19|60b161 103r11 103r21 105r11 105r21 106r17
+16*174 item{10+10} 19|60b174 106r24
+17U14*moveStack 17=25 17=52 17=78 17=105 19|104s7 115b14 142l8 142t17
+17a25 stack{14A9} 19|115b25 123m16 123r35 124m16 124r28 135m16 135r35 136m16
+. 136r28
+17a52 top{15A9} 19|115b52 122r33 127m13 127r23 134r41 139m13 139r23
+17a78 base{15A9} 19|115b78 117r22 117r32 120r28 121r23 122r22 124r34 126m13
+. 132r28 133r38 134r30 136r34 138m13
+17a105 stackInfo{15A9} 19|115b105 120r13 121r33 126r24 132r13 133r23 138r24
+18U14*makeStack 18>25 18>42 19|8b14 58l8 58t17
+18a25 inFile{string} 19|8b25 12r28
+18*42 Empty{10+10} 19|8b42 21r58
+19V13*push{boolean} 19=19 19=46 19>72 19>95 19>118 19|47s31 144b13 155l8
+. 155t12
+19a19 stack{14A9} 19|144b19 152m10
+19a46 top{15A9} 19|144b46 146m7 146r24 147r11 151r133 152r16
+19a72 base{15A9} 19|144b72 147r27
+19i95 stackNum{integer} 19|144b95 146r11 146r28 147r15 147r32 148r54 151r53
+. 151r137 152r20
+19*118 item{10+10} 19|144b118 151r85 152r34
+20U14*pop 20=19 20=46 20>72 20>95 19|52s18 157b14 166l8 166t11
+20a19 stack{14A9} 19|157b19 162r80 163m10 163r34
+20a46 top{15A9} 19|157b46 159r11 162r86 163r16 164m10 164r27
+20a72 base{15A9} 19|157b72 159r27 163r40
+20i95 stackNum{integer} 19|157b95 159r15 159r32 160r56 162r46 162r90 163r20
+. 164r14 164r31
+21U14*printInfo 21>25 21>45 21>64 21>84 19|72s7 112s7 168b14 188l8 188t17
+21a25 stack{14A9} 19|168b25 185r56
+21a45 top{15A9} 19|168b45 178r14
+21a64 base{15A9} 19|168b64 174r16 174r28 176r14 184r16 184r27 184r32
+21a84 stackInfo{15A9} 19|168b84 180r14
+X 19 memorymanagement.adb
+9p7 input{13|52P9} 12m12 12r12 13r11 13r30 13r49 13r65 13r80 41r32 42r17
+. 42r40 45r25 46r25
+10i7 upper{integer} 13m37 19r23 21r37
+10i14 lower{integer} 13m18 19r11 21r30
+10i21 N{integer} 13m87 19r52 22r32 23r33 24r38 34r22 35r68 39r15
+10i24 L0{integer} 13m56 19r35 31r20 32r21 33r26 35r83 35r91
+10i28 M{integer} 13m72 19r44 35r81 39r23
+21a10 stack{18|14A9} 47m37 47r37 49m34 49r34 52m23 52r23
+22a10 top{18|15A9} 31m10 35m13 36r24 37r29 47m44 47r44 49m41 49r41 52m30
+. 52r30
+23a10 base{18|15A9} 32m10 36m13 39m10 47r49 49m46 49r46 52r35
+24a10 stackInfo{18|15A9} 33m10 37m13 49m52 49r52
+25e10 operation{character} 42m24 43r18
+26i10 stackNum{integer} 42m47 47r55 49r69 52r41
+27*10 inName{18|10+10} 45m32 46m32 47r65 49r79
+28X10 Input_Error 54r25
+29b10 inserted{boolean} 47m19 48r27
+34i14 i{integer} 35r17 35r51 36r18 36r28 37r23 37r33
+61i7 AvailSpace{integer} 68r64 79m10 79r24 89r10 95r39 96r39
+62i7 TotalInc{integer} 82m13 82r25 96r59
+63i7 j{integer} 78r13 79r41 79r51 80r17 80r32 81r23 81r35 81r50 82r46 84r23
+. 86m10 86r15
+64i7 N{integer} 95r59 98r19
+65X7 Insufficient_Memory 91r16
+66f7 GrowthAllocate{float} 94m7 96r15
+66f23 Alpha{float} 95m7 99r32
+66f30 Beta{float} 96m7 99r62
+66f36 Tau{float} 99m10 100r86 101r19
+67f7 Sigma{float} 99r23 100r114 101m10
+68i7 MinSpace{integer} 89r24
+98i11 j{integer} 99r56 100r20 100r36 100r47 100r59
+107i11 j{integer} 108r20 108r30
+116i7 change{integer} 121m13 123r24 127r32 133m13 135r24 139r32
+117i7 N{integer} 119r19 131r27
+119i11 j{integer} 120r23 120r33 121r28 121r43 122r27 122r37 126r18 126r34
 . 127r17 127r27
-123i17 L{integer} 124r22 124r41
+122i17 l{integer} 123r22 123r41 124r22
+131i11 j{integer} 132r23 132r33 133r33 133r43 134r35 134r45 138r18 138r34
+. 139r17 139r27
+134i17 L{integer} 135r22 135r41 136r22
+174i11 i{integer} 175r38 176r19 178r18 180r24
+184i11 j{integer} 185r36 185r62
 
